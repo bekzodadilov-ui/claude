@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S2 Before the brand</title>
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="../assets/theme.css" />
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          font-family: "Montserrat", sans-serif;
+        }
+        #root .display,
+        #root .ghost {
+          font-family: "League Gothic", sans-serif;
+        }
+        #root .mono,
+        #root .tag,
+        #root .src {
+          font-family: "IBM Plex Mono", monospace;
+        }
+        #s2-shelf {
+          position: absolute;
+          left: 90px;
+          top: 170px;
+          width: 1080px;
+          height: 620px;
+          filter: saturate(0.2) brightness(0.85);
+        }
+        #s2-shelf .row {
+          position: absolute;
+          left: 0;
+          width: 1300px;
+          height: 200px;
+          display: flex;
+          align-items: flex-end;
+          gap: 34px;
+        }
+        #s2-shelf .board {
+          position: absolute;
+          left: 0;
+          right: -120px;
+          height: 10px;
+          background: #2a2c31;
+        }
+        #s2-shelf .slot {
+          position: relative;
+          width: 64px;
+          height: 196px;
+          transform-origin: 50% 100%;
+        }
+        #s2-shelf .slot .bottle {
+          position: absolute;
+          left: -43px;
+          bottom: 0;
+          transform: scale(0.37);
+          transform-origin: 50% 100%;
+        }
+        #s2-row-back {
+          top: 0;
+        }
+        #s2-row-mid {
+          top: 210px;
+        }
+        #s2-row-front {
+          top: 420px;
+        }
+        #s2-board-back {
+          top: 198px;
+        }
+        #s2-board-mid {
+          top: 408px;
+        }
+        #s2-board-front {
+          top: 618px;
+        }
+        #s2-fade {
+          position: absolute;
+          left: 900px;
+          top: 120px;
+          width: 420px;
+          height: 720px;
+          background: linear-gradient(90deg, rgba(12, 12, 14, 0), rgba(12, 12, 14, 1) 80%);
+        }
+        #s2-rail {
+          position: absolute;
+          left: 1260px;
+          top: 190px;
+          width: 560px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        #s2-rail .item {
+          border-top: 2px solid var(--line);
+          padding-top: 14px;
+        }
+        #s2-rail .item .display {
+          font-size: 78px;
+        }
+        #s2-rail .item .body {
+          font-size: 28px;
+          margin-top: 6px;
+        }
+        #s2-rail .item .n {
+          color: var(--silver);
+          font-size: 20px;
+          margin-bottom: 4px;
+        }
+        #s2-caption {
+          position: absolute;
+          left: 120px;
+          width: 1060px;
+          top: 806px;
+        }
+        #s2-caption .body {
+          font-size: 42px;
+          color: var(--ink);
+          margin-top: 18px;
+        }
+        #s2-foot {
+          position: absolute;
+          left: 120px;
+          bottom: 40px;
+          color: var(--silver);
+        }
+      </style>
+
+      <div id="root" data-composition-id="s2-category" data-width="1920" data-height="1080">
+        <div class="sc" id="s2">
+          <div class="mono chapter" id="s2-chapter"><span class="num">02</span><span class="bar"></span><span>Before the brand</span></div>
+          <div class="mono runner">Liquid Death · how marketing made water cool</div>
+
+          <div id="s2-shelf">
+            <div class="board" id="s2-board-back" data-layout-ignore></div>
+            <div class="board" id="s2-board-mid" data-layout-ignore></div>
+            <div class="board" id="s2-board-front" data-layout-ignore></div>
+            <div class="row" id="s2-row-back"></div>
+            <div class="row" id="s2-row-mid"></div>
+            <div class="row" id="s2-row-front"></div>
+          </div>
+          <div id="s2-fade"></div>
+
+          <div id="s2-rail">
+            <div class="item" id="s2-w1"><div class="mono n">01</div><div class="display">Hydration</div><div class="body">The functional need</div></div>
+            <div class="item" id="s2-w2"><div class="mono n">02</div><div class="display">Price</div><div class="body">The everyday trade-off</div></div>
+            <div class="item" id="s2-w3"><div class="mono n">03</div><div class="display">Availability</div><div class="body">Where and when it can be bought</div></div>
+            <div class="item" id="s2-w4"><div class="mono n">04</div><div class="display">Packaging</div><div class="body">How it stands out on the shelf</div></div>
+          </div>
+
+          <div id="s2-caption">
+            <div class="evidence"><span class="tag analysis">Analysis</span></div>
+            <div class="body">The need already existed. Brands competed for attention.</div>
+          </div>
+          <div class="mono" id="s2-foot">Simplified view · many water brands already used distinctive marketing</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          // Deterministic per-bottle variation: brands differ slightly, never identical
+          var heights = [1.0, 0.92, 1.06, 0.97, 1.03, 0.9, 1.08, 0.95, 1.01, 0.93, 1.05, 0.98];
+          var caps = ["#9aa1a9", "#7d8790", "#b5bcc3", "#8c949c", "#a3a9ae", "#6f7880"];
+          var labels = [0.55, 0.38, 0.62, 0.45, 0.5, 0.35];
+          ["s2-row-back", "s2-row-mid", "s2-row-front"].forEach(function (rowId, r) {
+            var row = document.getElementById(rowId);
+            for (var i = 0; i < 12; i++) {
+              var k = (i * 5 + r * 3) % 12;
+              var slot = document.createElement("div");
+              slot.className = "slot";
+              slot.style.height = Math.round(196 * heights[k]) + "px";
+              slot.innerHTML =
+                '<div class="bottle" style="transform:scale(' +
+                (0.37 * heights[k]).toFixed(3) +
+                ')"><div class="b-cap" style="background:' +
+                caps[k % 6] +
+                '"></div><div class="b-neck"></div><div class="b-shoulder"></div><div class="b-body"></div><div class="b-label" style="background:rgba(120,130,140,' +
+                labels[k % 6] +
+                ')"></div></div>';
+              row.appendChild(slot);
+            }
+          });
+
+          var tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s2", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, 0);
+          tl.fromTo("#s2-chapter", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 0.4);
+
+          // 0.5–9 s: the shelf assembles row by row, left to right
+          tl.fromTo("#s2-board-back, #s2-board-mid, #s2-board-front", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 1.4, stagger: 0.4, ease: "power3.inOut" }, 0.5);
+          tl.fromTo("#s2-row-back .slot", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.18, ease: "power2.out" }, 1.2);
+          tl.fromTo("#s2-row-mid .slot", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.18, ease: "power2.out" }, 2.6);
+          tl.fromTo("#s2-row-front .slot", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, stagger: 0.18, ease: "power2.out" }, 4.0);
+
+          // slow parallax drift: front row travels farthest
+          tl.fromTo("#s2-row-back", { x: 0 }, { x: -40, duration: 38, ease: "none" }, 1.0);
+          tl.fromTo("#s2-row-mid", { x: 0 }, { x: -80, duration: 38, ease: "none" }, 1.0);
+          tl.fromTo("#s2-row-front", { x: 0 }, { x: -130, duration: 38, ease: "none" }, 1.0);
+
+          // 10–28 s: four category words, one every ~5 s
+          [10, 15, 20, 25].forEach(function (t, i) {
+            tl.fromTo("#s2-w" + (i + 1), { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.9, ease: "power3.out" }, t);
+          });
+
+          // 30 s: the analytical caption
+          tl.fromTo("#s2-caption", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" }, 30.0);
+          tl.fromTo("#s2-foot", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "sine.out" }, 31.5);
+
+          // exit: the shelf dims to black, leftward
+          tl.to("#s2", { opacity: 0, x: -60, duration: 1.0, ease: "power2.in" }, 39.0);
+
+          window.__timelines["s2-category"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

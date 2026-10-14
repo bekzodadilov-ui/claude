@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S5 The consumer behavior shift</title>
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="../assets/theme.css" />
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          font-family: "Montserrat", sans-serif;
+        }
+        #root .display,
+        #root .ghost,
+        #root .can-word {
+          font-family: "League Gothic", sans-serif;
+        }
+        #root .mono,
+        #root .tag,
+        #root .src {
+          font-family: "IBM Plex Mono", monospace;
+        }
+        #s5-ba {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 190px;
+        }
+        #s5-ba .row {
+          display: grid;
+          grid-template-columns: 200px 1fr;
+          gap: 40px;
+          align-items: start;
+          padding: 30px 0;
+          border-top: 2px solid var(--line);
+        }
+        #s5-ba .row .mono {
+          padding-top: 22px;
+        }
+        #s5-ba .line {
+          font-size: 104px;
+          line-height: 1;
+        }
+        #s5-ba .line .w {
+          display: inline-block;
+        }
+        #s5-ba .line .add {
+          color: var(--silver-hi);
+        }
+        #s5-before .line {
+          color: var(--ink-dim);
+        }
+        #s5-shift {
+          position: absolute;
+          left: 360px;
+          top: 820px;
+          display: flex;
+          align-items: center;
+          gap: 30px;
+        }
+        #s5-shift .display {
+          font-size: 76px;
+        }
+        #s5-shift .from {
+          color: var(--ink-dim);
+        }
+        #s5-shift .arr {
+          width: 140px;
+          height: 3px;
+          background: var(--red-hi);
+          position: relative;
+          transform-origin: 0% 50%;
+        }
+        #s5-shift .arr::after {
+          content: "";
+          position: absolute;
+          right: -2px;
+          top: -9px;
+          border-left: 16px solid var(--red-hi);
+          border-top: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+        }
+        #s5-hub {
+          position: absolute;
+          inset: 0;
+        }
+        #s5-spot {
+          left: 560px;
+          top: -60px;
+          width: 800px;
+          height: 1100px;
+        }
+        #s5-can {
+          position: absolute;
+          left: 810px;
+          top: 150px;
+          width: 300px;
+          height: 820px;
+        }
+        #s5-can .can {
+          scale: 0.86;
+          transform-origin: 50% 40%;
+        }
+        #s5-hub .word {
+          position: absolute;
+          font-size: 92px;
+          white-space: nowrap;
+        }
+        #s5-wa {
+          left: 200px;
+          top: 240px;
+        }
+        #s5-wb {
+          left: 1260px;
+          top: 240px;
+        }
+        #s5-wc {
+          left: 200px;
+          top: 600px;
+        }
+        #s5-wd {
+          left: 1260px;
+          top: 560px;
+          line-height: 0.95;
+        }
+        #s5-hub .link {
+          position: absolute;
+          height: 2px;
+          background: var(--silver);
+          opacity: 0.6;
+          transform-origin: 0% 50%;
+        }
+        #s5-cap {
+          position: absolute;
+          left: 120px;
+          width: 600px;
+          top: 820px;
+        }
+        #s5-cap .body {
+          font-size: 40px;
+          color: var(--ink);
+          margin-top: 16px;
+        }
+        #s5-concept {
+          position: absolute;
+          right: 120px;
+          top: 840px;
+          text-align: right;
+          width: 620px;
+        }
+        #s5-concept .body {
+          font-size: 28px;
+          margin-top: 10px;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s5-consumer" data-width="1920" data-height="1080">
+        <div class="sc" id="s5">
+          <div class="mono chapter" id="s5-chapter"><span class="num">05</span><span class="bar"></span><span>The consumer behavior shift</span></div>
+          <div class="mono runner">Liquid Death · how marketing made water cool</div>
+
+          <div id="s5-act1">
+            <div id="s5-ba">
+              <div class="row" id="s5-before">
+                <div class="mono">Before</div>
+                <div class="display line"><span class="w">I&nbsp;</span><span class="w">need&nbsp;</span><span class="w">water.</span></div>
+              </div>
+              <div class="row" id="s5-after">
+                <div class="mono">After</div>
+                <div class="display line" id="s5-after-line"><span class="w">I&nbsp;</span><span class="w">need&nbsp;</span><span class="w">water,&nbsp;</span><span class="w add">and&nbsp;</span><span class="w add">I&nbsp;</span><span class="w add">prefer&nbsp;</span><span class="w add">a&nbsp;</span><span class="w add">brand&nbsp;</span><span class="w add">that&nbsp;</span><span class="w add">reflects&nbsp;</span><span class="w add">my&nbsp;</span><span class="w add">personality.</span></div>
+              </div>
+            </div>
+            <div id="s5-shift">
+              <div class="display from">Functional product</div>
+              <div class="arr"></div>
+              <div class="display">Symbolic product</div>
+            </div>
+          </div>
+
+          <div id="s5-hub">
+            <div class="spot" id="s5-spot"></div>
+            <div class="link" id="s5-la" style="left: 560px; top: 300px; width: 290px"></div>
+            <div class="link" id="s5-lb" style="left: 1070px; top: 300px; width: 180px"></div>
+            <div class="link" id="s5-lc" style="left: 690px; top: 660px; width: 160px"></div>
+            <div class="link" id="s5-ld" style="left: 1070px; top: 660px; width: 180px"></div>
+            <div id="s5-can"><div class="can"><div class="can-lid"></div><div class="can-neck"></div><div class="can-body"><svg class="can-mark" viewBox="0 0 100 100"><path d="M50 4 C24 4 8 22 8 46 C8 62 16 72 26 78 L26 96 L40 96 L40 86 L46 86 L46 96 L54 96 L54 86 L60 86 L60 96 L74 96 L74 78 C84 72 92 62 92 46 C92 22 76 4 50 4 Z" fill="#a7abb1" /><ellipse cx="33" cy="48" rx="11" ry="13" fill="#0c0c0e" /><ellipse cx="67" cy="48" rx="11" ry="13" fill="#0c0c0e" /><path d="M50 60 L44 72 L56 72 Z" fill="#0c0c0e" /></svg><div class="can-word"><span>LIQUID</span><span>DEATH</span></div><div class="can-band"></div><div class="can-shine"></div></div><div class="can-base"></div></div></div>
+            <div class="display word" id="s5-wa">Identity</div>
+            <div class="display word" id="s5-wb">Humor</div>
+            <div class="display word" id="s5-wc">Self-expression</div>
+            <div class="display word" id="s5-wd"><span style="display:block">Cultural</span><span style="display:block">association</span></div>
+          </div>
+
+          <div id="s5-cap">
+            <div class="evidence"><span class="tag analysis">Analysis</span></div>
+            <div class="body">A plausible mechanism, not how every customer thinks.</div>
+          </div>
+          <div id="s5-concept">
+            <div class="mono">Concept · symbolic consumption</div>
+            <div class="body">Products can be valued for what they signal, not only for what they do.</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s5", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "sine.out" }, 0);
+          tl.fromTo("#s5-chapter", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 0.4);
+
+          // 0–14 s: BEFORE, then AFTER extends the same sentence
+          tl.fromTo("#s5-before", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 1.0);
+          tl.fromTo("#s5-after .mono", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "sine.out" }, 4.5);
+          tl.fromTo("#s5-after-line .w:not(.add)", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.12, ease: "power2.out" }, 4.8);
+          tl.fromTo("#s5-after-line .add", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.32, ease: "power2.out" }, 6.4);
+          tl.fromTo("#s5-after", { borderTopColor: "#2a2c31" }, { borderTopColor: "#c4262b", duration: 0.8, ease: "sine.inOut" }, 9.6);
+
+          // 14–20 s: functional → symbolic
+          tl.fromTo("#s5-shift .from", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 14.0);
+          tl.fromTo("#s5-shift .arr", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 14.8);
+          tl.fromTo("#s5-shift .display:last-child", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 15.6);
+          tl.to("#s5-act1", { opacity: 0, x: -60, duration: 0.9, ease: "power2.in" }, 19.2);
+
+          // 20–40 s: the can at the center; four meanings settle around it
+          tl.fromTo("#s5-spot", { opacity: 0 }, { opacity: 1, duration: 1.5, ease: "sine.out" }, 20.0);
+          tl.fromTo("#s5-can", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 1.4, ease: "power3.out" }, 20.2);
+          ["#s5-wa", "#s5-wb", "#s5-wc", "#s5-wd"].forEach(function (w, i) {
+            var t = 22.5 + i * 2.6;
+            tl.fromTo(w, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.7, ease: "back.out(2)" }, t);
+            tl.fromTo("#s5-l" + "abcd"[i], { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, t + 0.3);
+          });
+          // slow orbit drift: each word breathes on its own axis
+          tl.fromTo("#s5-wa", { x: 0, y: 0 }, { x: -18, y: -10, duration: 22, ease: "sine.inOut" }, 23.2);
+          tl.fromTo("#s5-wb", { x: 0, y: 0 }, { x: 16, y: -12, duration: 22, ease: "sine.inOut" }, 25.8);
+          tl.fromTo("#s5-wc", { x: 0, y: 0 }, { x: -14, y: 12, duration: 22, ease: "sine.inOut" }, 28.4);
+          tl.fromTo("#s5-wd", { x: 0, y: 0 }, { x: 18, y: 10, duration: 22, ease: "sine.inOut" }, 31.0);
+
+          // 40–50 s: the caveat
+          tl.to("#s5-hub", { y: -60, duration: 1.0, ease: "power2.inOut" }, 39.6);
+          tl.fromTo("#s5-cap", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, 40.2);
+          tl.fromTo("#s5-concept", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.9, ease: "power2.out" }, 42.0);
+
+          tl.to("#s5", { opacity: 0, x: -60, duration: 1.0, ease: "power2.in" }, 49.0);
+          window.__timelines["s5-consumer"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

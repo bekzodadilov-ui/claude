@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S6 What changed</title>
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="../assets/theme.css" />
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          font-family: "Montserrat", sans-serif;
+        }
+        #root .display,
+        #root .ghost,
+        #root .can-word {
+          font-family: "League Gothic", sans-serif;
+        }
+        #root .mono,
+        #root .tag,
+        #root .src {
+          font-family: "IBM Plex Mono", monospace;
+        }
+        #s6-transform {
+          position: absolute;
+          inset: 0;
+        }
+        #s6-outline {
+          position: absolute;
+          left: 1180px;
+          top: 150px;
+          width: 300px;
+          height: 820px;
+          border: 3px dashed var(--silver);
+          border-radius: 40px 40px 18px 18px;
+        }
+        #s6-real {
+          position: absolute;
+          left: 1180px;
+          top: 150px;
+          width: 300px;
+          height: 820px;
+        }
+        #s6-spot {
+          left: 880px;
+          top: -100px;
+          width: 900px;
+          height: 1300px;
+        }
+        #s6-labels {
+          position: absolute;
+          left: 120px;
+          top: 420px;
+          width: 900px;
+        }
+        #s6-labels .display {
+          font-size: 120px;
+        }
+        #s6-from {
+          color: var(--ink-dim);
+          text-decoration: line-through;
+          text-decoration-color: var(--red-hi);
+          text-decoration-thickness: 6px;
+        }
+        #s6-eq {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 230px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        #s6-eq .term {
+          padding: 24px 30px;
+          border: 2px solid var(--silver);
+          font-size: 76px;
+          white-space: nowrap;
+        }
+        #s6-eq .plus {
+          font-size: 90px;
+          color: var(--silver);
+        }
+        #s6-thesis {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 520px;
+        }
+        #s6-thesis .display {
+          font-size: 132px;
+        }
+        #s6-thesis .l2 {
+          color: var(--silver-hi);
+        }
+        #s6-rail-wrap {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 250px;
+          height: 600px;
+          overflow: hidden;
+        }
+        #s6-rail {
+          position: absolute;
+          left: 120px;
+          top: 0;
+          width: 2600px;
+          height: 600px;
+        }
+        #s6-rail .track {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 150px;
+          height: 3px;
+          background: var(--silver);
+          transform-origin: 0% 50%;
+        }
+        #s6-rail .st {
+          position: absolute;
+          top: 0;
+          width: 500px;
+        }
+        #s6-rail .st .dot {
+          position: absolute;
+          left: 0;
+          top: 140px;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background: var(--ink);
+        }
+        #s6-rail .st .yr {
+          font-size: 120px;
+        }
+        #s6-rail .st .what {
+          margin-top: 50px;
+          font-size: 32px;
+          color: var(--ink);
+          width: 470px;
+        }
+        #s6-rail .st .evidence {
+          margin-top: 22px;
+        }
+        #s6-foot {
+          position: absolute;
+          left: 120px;
+          bottom: 60px;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s6-meaning" data-width="1920" data-height="1080">
+        <div class="sc" id="s6">
+          <div class="mono chapter" id="s6-chapter"><span class="num">06</span><span class="bar"></span><span>What changed?</span></div>
+          <div class="mono runner">Liquid Death · how marketing made water cool</div>
+
+          <div id="s6-transform">
+            <div class="spot" id="s6-spot"></div>
+            <div id="s6-outline"></div>
+            <div id="s6-real"><div class="can"><div class="can-lid"></div><div class="can-neck"></div><div class="can-body"><svg class="can-mark" viewBox="0 0 100 100"><path d="M50 4 C24 4 8 22 8 46 C8 62 16 72 26 78 L26 96 L40 96 L40 86 L46 86 L46 96 L54 96 L54 86 L60 86 L60 96 L74 96 L74 78 C84 72 92 62 92 46 C92 22 76 4 50 4 Z" fill="#a7abb1" /><ellipse cx="33" cy="48" rx="11" ry="13" fill="#0c0c0e" /><ellipse cx="67" cy="48" rx="11" ry="13" fill="#0c0c0e" /><path d="M50 60 L44 72 L56 72 Z" fill="#0c0c0e" /></svg><div class="can-word"><span>LIQUID</span><span>DEATH</span></div><div class="can-band"></div><div class="can-shine"></div></div><div class="can-base"></div></div></div>
+            <div id="s6-labels">
+              <div class="display" id="s6-from">Beverage container</div>
+              <div class="display" id="s6-to">Lifestyle object</div>
+            </div>
+          </div>
+
+          <div id="s6-eq">
+            <div class="display term">Functional value</div>
+            <div class="display plus">+</div>
+            <div class="display term">Brand identity</div>
+            <div class="display plus">+</div>
+            <div class="display term">Entertainment</div>
+          </div>
+
+          <div id="s6-thesis">
+            <div class="display l1">The product remains water.</div>
+            <div class="display l2">The perceived meaning changes.</div>
+          </div>
+
+          <div id="s6-rail-wrap">
+            <div id="s6-rail" data-layout-allow-overflow>
+              <div class="track"></div>
+              <div class="st" id="s6-st1" style="left: 0px">
+                <div class="dot"></div>
+                <div class="display yr">2019</div>
+                <div class="what">First cans sold</div>
+                <div class="evidence"><span class="tag fact">Verified fact</span><span class="src">TechCrunch</span></div>
+              </div>
+              <div class="st" id="s6-st2" style="left: 560px">
+                <div class="dot"></div>
+                <div class="display yr">2022</div>
+                <div class="what">Expands beyond still water: flavored sparkling line</div>
+                <div class="evidence"><span class="tag fact">Verified fact</span><span class="src">BevNET · Modern Retail</span></div>
+              </div>
+              <div class="st" id="s6-st3" style="left: 1120px">
+                <div class="dot"></div>
+                <div class="display yr">2023</div>
+                <div class="what">Iced tea launches · $263M in retail sales (reported)</div>
+                <div class="evidence"><span class="tag fact">Verified fact</span><span class="src">BeverageDaily, 2024</span></div>
+              </div>
+              <div class="st" id="s6-st4" style="left: 1680px">
+                <div class="dot"></div>
+                <div class="display yr">2024</div>
+                <div class="what">Valued at $1.4B after a $67M raise (reported)</div>
+                <div class="evidence"><span class="tag fact">Verified fact</span><span class="src">The Grocer · Fortune, Mar 2024</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="mono" id="s6-foot">Reported trade-press figures · no market-share claims</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s6", { opacity: 0 }, { opacity: 1, duration: 1.0, ease: "sine.out" }, 0);
+          tl.fromTo("#s6-chapter", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 0.4);
+
+          // 0–8 s: an empty container outline becomes the object
+          tl.fromTo("#s6-outline", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.out" }, 0.6);
+          tl.fromTo("#s6-from", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 1.0);
+          tl.fromTo("#s6-from", { textDecorationColor: "rgba(196,38,43,0)" }, { textDecorationColor: "rgba(196,38,43,1)", duration: 0.4, ease: "none", immediateRender: false }, 3.4);
+          tl.fromTo("#s6-real", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 1.6, ease: "power2.out" }, 3.2);
+          tl.to("#s6-outline", { opacity: 0, scale: 1.04, duration: 1.2, ease: "power2.out" }, 3.4);
+          tl.fromTo("#s6-spot", { opacity: 0 }, { opacity: 1, duration: 1.6, ease: "sine.out" }, 3.2);
+          tl.fromTo("#s6-to", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 4.2);
+          tl.to("#s6-transform", { opacity: 0, duration: 0.8, ease: "power2.in" }, 7.4);
+
+          // 8–20 s: the equation builds term by term
+          tl.fromTo("#s6-eq > *", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, stagger: 1.4, ease: "power3.out" }, 8.4);
+
+          // 20–28 s: the held thesis line
+          tl.to("#s6-eq", { opacity: 0.35, y: -40, duration: 0.8, ease: "power2.inOut" }, 19.6);
+          tl.fromTo("#s6-thesis .l1", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 20.2);
+          tl.fromTo("#s6-thesis .l2", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 22.0);
+          tl.to("#s6-eq, #s6-thesis", { opacity: 0, duration: 0.7, ease: "power2.in" }, 27.3);
+
+          // 28–45 s: milestone rail, one camera pan left to right
+          tl.fromTo("#s6-rail .track", { scaleX: 0 }, { scaleX: 1, duration: 2.0, ease: "power2.inOut" }, 28.0);
+          [28.6, 31.4, 34.6, 37.8].forEach(function (t, i) {
+            tl.fromTo("#s6-st" + (i + 1), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, t);
+          });
+          tl.fromTo("#s6-rail", { x: 0 }, { x: -560, duration: 12, ease: "power1.inOut" }, 30.0);
+          tl.fromTo("#s6-foot", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.out" }, 39.0);
+
+          tl.to("#s6", { opacity: 0, duration: 1.4, ease: "power2.in" }, 43.6);
+          window.__timelines["s6-meaning"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

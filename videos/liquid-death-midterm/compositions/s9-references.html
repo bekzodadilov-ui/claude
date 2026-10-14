@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S9 References</title>
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="../assets/theme.css" />
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          font-family: "Montserrat", sans-serif;
+        }
+        #root .display {
+          font-family: "League Gothic", sans-serif;
+        }
+        #root .mono,
+        #root .ref,
+        #root .src {
+          font-family: "IBM Plex Mono", monospace;
+        }
+        #s9-head {
+          position: absolute;
+          left: 120px;
+          top: 70px;
+          font-size: 96px;
+        }
+        #s9-list {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 210px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          column-gap: 70px;
+          row-gap: 18px;
+        }
+        #s9-list .ref {
+          font-size: 21px;
+          line-height: 1.4;
+          color: var(--ink-dim);
+          padding-left: 46px;
+          position: relative;
+        }
+        #s9-list .ref .n {
+          position: absolute;
+          left: 0;
+          color: var(--silver);
+        }
+        #s9-list .ref em {
+          color: var(--ink);
+          font-style: normal;
+        }
+        #s9-note {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          bottom: 60px;
+          border-top: 2px solid var(--line);
+          padding-top: 20px;
+          display: flex;
+          justify-content: space-between;
+          gap: 40px;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s9-references" data-width="1920" data-height="1080">
+        <div class="sc" id="s9">
+          <div class="display" id="s9-head">References</div>
+          <div id="s9-list">
+            <div class="ref"><span class="n">01</span>BeverageDaily (2024, Jun 19). <em>How to build a beverage brand: Liquid Death on its marketing magic.</em></div>
+            <div class="ref"><span class="n">08</span>Marketing Beat (2023, Jul 28). <em>Liquid Death vs. back sweat: brand goes head-to-head in taste test stunt.</em></div>
+            <div class="ref"><span class="n">02</span>Fortune (2024, Mar 15). <em>Interview with Liquid Death CEO Mike Cessario.</em></div>
+            <div class="ref"><span class="n">09</span>Contagious (2022). <em>Liquid Death links with Martha Stewart for Halloween.</em></div>
+            <div class="ref"><span class="n">03</span>The Grocer (2024, Mar). <em>Liquid Death hits unicorn $1.4bn valuation as it raises $67m.</em></div>
+            <div class="ref"><span class="n">10</span>Packaging Digest. <em>Liquid Death may "murder your thirst," but it won't kill plastic.</em></div>
+            <div class="ref"><span class="n">04</span>TechCrunch. <em>Liquid Death funding and revenue coverage.</em></div>
+            <div class="ref"><span class="n">11</span>U.S. EPA. <em>Aluminum: Material-specific data</em> (Facts and Figures, 2018 data).</div>
+            <div class="ref"><span class="n">05</span>BevNET (2022). <em>Liquid Death to launch iced teas, begin shift to U.S. production in 2023.</em></div>
+            <div class="ref"><span class="n">12</span>Schögel, M., &amp; Grellmann, L.-E. (2024). <em>Liquid Death</em> [Teaching case]. University of St. Gallen.</div>
+            <div class="ref"><span class="n">06</span>Campaign (2022, Feb). <em>Kids chug Liquid Death tallboys in Super Bowl spot.</em></div>
+            <div class="ref"><span class="n">13</span>Liquid Death. <em>Official website</em>, liquiddeath.com (brand messaging).</div>
+            <div class="ref"><span class="n">07</span>Muse by Clio (2020). <em>Liquid Death made a heavy-metal album with lyrics from its hate mail.</em></div>
+            <div class="ref"><span class="n">14</span>Modern Retail (2025). <em>How Liquid Death is tackling the soda wars.</em></div>
+          </div>
+          <div class="mono" id="s9-note"><span>Can and ads shown as illustrations · no brand footage used</span><span>Claims tagged: verified fact · company claim · analysis</span></div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s9", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "sine.out" }, 0);
+          tl.fromTo("#s9-list", { y: 24 }, { y: -6, duration: 15, ease: "none" }, 0);
+          window.__timelines["s9-references"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S4 How the marketing works</title>
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="../assets/theme.css" />
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          font-family: "Montserrat", sans-serif;
+        }
+        #root .display,
+        #root .ghost,
+        #root .can-word {
+          font-family: "League Gothic", sans-serif;
+        }
+        #root .mono,
+        #root .tag,
+        #root .src {
+          font-family: "IBM Plex Mono", monospace;
+        }
+        #s4-title {
+          position: absolute;
+          left: 120px;
+          top: 360px;
+          font-size: 230px;
+          white-space: nowrap;
+        }
+        #s4-grid {
+          position: absolute;
+          left: 120px;
+          top: 160px;
+          width: 1680px;
+          height: 640px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 36px;
+          transform-origin: 50% 0%;
+        }
+        #s4-grid .cell {
+          position: relative;
+          overflow: hidden;
+          background: var(--panel);
+          border: 2px solid var(--line);
+          padding: 26px 34px;
+        }
+        #s4-grid .cell .head {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          color: var(--ink);
+        }
+        #s4-grid .cell .head .n {
+          color: var(--silver);
+        }
+        #s4-grid .cell.active {
+          border-color: var(--silver);
+        }
+        /* Q1 visual differentiation */
+        #s4-q1-can {
+          position: absolute;
+          left: 40px;
+          bottom: 22px;
+          width: 81px;
+          height: 221px;
+        }
+        #s4-q1-can .can {
+          scale: 0.27;
+          transform-origin: 0 0;
+        }
+        #s4-q1-bottle {
+          position: absolute;
+          left: 170px;
+          bottom: 22px;
+          width: 63px;
+          height: 218px;
+        }
+        #s4-q1-bottle .bottle {
+          scale: 0.42;
+          transform-origin: 0 0;
+        }
+        #s4-q1-text {
+          position: absolute;
+          left: 300px;
+          right: 34px;
+          bottom: 30px;
+        }
+        #s4-q1-text .body {
+          font-size: 30px;
+        }
+        /* Q2 shock and humor */
+        #s4-q2-slogan {
+          margin-top: 26px;
+          font-size: 128px;
+          white-space: nowrap;
+          transform-origin: 0% 50%;
+        }
+        #s4-q2-ev {
+          margin-top: 18px;
+        }
+        /* Q3 montage cards stack in one place; hard cuts between them */
+        #s4-q3 .card {
+          position: absolute;
+          left: 34px;
+          right: 34px;
+          top: 72px;
+          bottom: 22px;
+          opacity: 0;
+        }
+        #s4-q3 .card .display {
+          font-size: 68px;
+        }
+        #s4-q3 .card .body {
+          font-size: 27px;
+          margin: 6px 0 14px;
+          color: var(--ink);
+        }
+        #s4-q3-idle {
+          position: absolute;
+          left: 34px;
+          top: 90px;
+          right: 34px;
+        }
+        /* Q4 identity and culture: abstract concert light, no faces */
+        #s4-q4-scene {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+        }
+        #s4-q4-scene .beam {
+          position: absolute;
+          top: -40px;
+          width: 160px;
+          height: 420px;
+          background: linear-gradient(180deg, rgba(217, 220, 224, 0.28), rgba(217, 220, 224, 0));
+          clip-path: polygon(40% 0, 60% 0, 100% 100%, 0 100%);
+          transform-origin: 50% 0%;
+        }
+        #s4-q4-crowd {
+          position: absolute;
+          left: -20px;
+          right: -20px;
+          bottom: -30px;
+          height: 120px;
+          display: flex;
+          align-items: flex-end;
+          gap: 6px;
+        }
+        #s4-q4-crowd .h {
+          flex: 1;
+          background: #060607;
+          border-radius: 50% 50% 0 0;
+        }
+        #s4-q4-raised {
+          position: absolute;
+          left: 610px;
+          bottom: 70px;
+          width: 48px;
+          height: 131px;
+        }
+        #s4-q4-raised .can {
+          scale: 0.16;
+          transform-origin: 0 0;
+        }
+        #s4-q4-text {
+          position: absolute;
+          left: 34px;
+          top: 74px;
+          width: 520px;
+        }
+        #s4-q4-text .body {
+          font-size: 28px;
+          color: var(--ink);
+          margin-top: 10px;
+        }
+        /* conceptual chain */
+        #s4-chain {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 760px;
+        }
+        #s4-chain .nodes {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          margin-top: 18px;
+        }
+        #s4-chain .node {
+          padding: 18px 26px;
+          border: 2px solid var(--silver);
+          font-size: 62px;
+          white-space: nowrap;
+        }
+        #s4-chain .node.last {
+          border-style: dashed;
+        }
+        #s4-chain .arr {
+          width: 70px;
+          height: 3px;
+          background: var(--silver);
+          position: relative;
+          transform-origin: 0% 50%;
+        }
+        #s4-chain .arr::after {
+          content: "";
+          position: absolute;
+          right: -2px;
+          top: -8px;
+          border-left: 14px solid var(--silver);
+          border-top: 9px solid transparent;
+          border-bottom: 9px solid transparent;
+        }
+        #s4-chain .note {
+          margin-top: 22px;
+          display: flex;
+          gap: 20px;
+          align-items: center;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s4-mechanism" data-width="1920" data-height="1080">
+        <div class="sc" id="s4">
+          <div class="mono chapter" id="s4-chapter"><span class="num">04</span><span class="bar"></span><span>How the marketing works</span></div>
+          <div class="mono runner">Liquid Death · how marketing made water cool</div>
+
+          <div class="display" id="s4-title">How the marketing works</div>
+
+          <div id="s4-grid">
+            <div class="cell" id="s4-q1">
+              <div class="mono head"><span class="n">01</span><span>Visual differentiation</span></div>
+                              <div id="s4-q1-can"><div class="can"><div class="can-lid"></div><div class="can-neck"></div><div class="can-body"><svg class="can-mark" viewBox="0 0 100 100"><path d="M50 4 C24 4 8 22 8 46 C8 62 16 72 26 78 L26 96 L40 96 L40 86 L46 86 L46 96 L54 96 L54 86 L60 86 L60 96 L74 96 L74 78 C84 72 92 62 92 46 C92 22 76 4 50 4 Z" fill="#a7abb1" /><ellipse cx="33" cy="48" rx="11" ry="13" fill="#0c0c0e" /><ellipse cx="67" cy="48" rx="11" ry="13" fill="#0c0c0e" /><path d="M50 60 L44 72 L56 72 Z" fill="#0c0c0e" /></svg><div class="can-word"><span>LIQUID</span><span>DEATH</span></div><div class="can-band"></div><div class="can-shine"></div></div><div class="can-base"></div></div></div>
+                <div id="s4-q1-bottle"><div class="bottle"><div class="b-cap"></div><div class="b-neck"></div><div class="b-shoulder"></div><div class="b-body"></div><div class="b-label"></div></div></div>
+                <div id="s4-q1-text">
+                  <div class="body">A black tallboy that reads like beer or an energy drink, on a shelf of clear bottles.</div>
+                </div>
+            </div>
+
+            <div class="cell" id="s4-q2">
+              <div class="mono head"><span class="n">02</span><span>Shock and humor</span></div>
+              <div class="display" id="s4-q2-slogan">Murder your thirst</div>
+              <div class="evidence" id="s4-q2-ev"><span class="tag claim">Company claim</span><span class="src">Brand slogan · liquiddeath.com</span></div>
+            </div>
+
+            <div class="cell" id="s4-q3">
+              <div class="mono head"><span class="n">03</span><span>Entertainment-first content</span></div>
+              <div class="body" id="s4-q3-idle">Ads designed to be shared as entertainment, not only to inform.</div>
+              <div class="card" id="s4-k1">
+                <div class="display">Super Bowl LVI · 2022</div>
+                <div class="body">Regional spot: kids "chug" tallboys. End line: "Don't be scared. It's just water."</div>
+                <div class="evidence"><span class="tag fact">Verified fact</span><span class="src">Campaign · Adweek, Feb 2022</span></div>
+              </div>
+              <div class="card" id="s4-k2">
+                <div class="display">Greatest Hates · 2020</div>
+                <div class="body">A heavy-metal album whose lyrics are real hate comments about the brand.</div>
+                <div class="evidence"><span class="tag fact">Verified fact</span><span class="src">Muse by Clio, May 2020</span></div>
+              </div>
+              <div class="card" id="s4-k3">
+                <div class="display">Martha Stewart · 2022</div>
+                <div class="body">A Halloween collaboration built on deadpan celebrity absurdity.</div>
+                <div class="evidence"><span class="tag fact">Verified fact</span><span class="src">Contagious · B&amp;T, Oct 2022</span></div>
+              </div>
+              <div class="card" id="s4-k4">
+                <div class="display">Back-sweat taste test · 2023</div>
+                <div class="body">"Better Than Back Sweat?": a blind taste-test film answering an online troll.</div>
+                <div class="evidence"><span class="tag fact">Verified fact</span><span class="src">Marketing Beat, Jul 2023</span></div>
+              </div>
+            </div>
+
+            <div class="cell" id="s4-q4">
+              <div id="s4-q4-scene">
+                <div class="beam" id="s4-b1" style="left: 560px"></div>
+                <div class="beam" id="s4-b2" style="left: 640px"></div>
+                <div class="beam" id="s4-b3" style="left: 720px"></div>
+                <div id="s4-q4-raised"><div class="can"><div class="can-lid"></div><div class="can-neck"></div><div class="can-body"><svg class="can-mark" viewBox="0 0 100 100"><path d="M50 4 C24 4 8 22 8 46 C8 62 16 72 26 78 L26 96 L40 96 L40 86 L46 86 L46 96 L54 96 L54 86 L60 86 L60 96 L74 96 L74 78 C84 72 92 62 92 46 C92 22 76 4 50 4 Z" fill="#a7abb1" /><ellipse cx="33" cy="48" rx="11" ry="13" fill="#0c0c0e" /><ellipse cx="67" cy="48" rx="11" ry="13" fill="#0c0c0e" /><path d="M50 60 L44 72 L56 72 Z" fill="#0c0c0e" /></svg><div class="can-word"><span>LIQUID</span><span>DEATH</span></div><div class="can-band"></div><div class="can-shine"></div></div><div class="can-base"></div></div></div>
+                <div id="s4-q4-crowd"></div>
+              </div>
+              <div class="mono head" style="position: relative"><span class="n">04</span><span>Identity and culture</span></div>
+              <div id="s4-q4-text">
+                <div class="body">Positioned inside music, comedy and subculture, not the gym or the spa.</div>
+                <div class="mono" style="margin-top: 14px; font-size: 18px">Illustrative setting · no real customers shown</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="s4-chain">
+            <div class="nodes">
+              <div class="display node">Packaging</div>
+              <div class="arr"></div>
+              <div class="display node">Attention</div>
+              <div class="arr"></div>
+              <div class="display node">Brand recall</div>
+              <div class="arr"></div>
+              <div class="display node last">Possible purchase preference</div>
+            </div>
+            <div class="note"><span class="tag analysis">Analysis</span><span class="src">Conceptual model of the strategy · not a statistically proven causal sequence</span></div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var crowd = document.getElementById("s4-q4-crowd");
+          var hs = [62, 80, 70, 95, 66, 84, 74, 100, 68, 88, 76, 92, 64, 82, 72, 96, 70, 86];
+          hs.forEach(function (h) {
+            var d = document.createElement("div");
+            d.className = "h";
+            d.style.height = h + "px";
+            crowd.appendChild(d);
+          });
+
+          var tl = gsap.timeline({ paused: true });
+
+          // 0–3.5 s: title with the second (and last) glitch
+          tl.fromTo("#s4-title", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.25, ease: "power4.out" }, 0);
+          tl.fromTo(
+            "#s4-title",
+            { textShadow: "0px 0 0 rgba(196,38,43,0), 0px 0 0 rgba(167,171,177,0)" },
+            { textShadow: "-12px 0 0 rgba(196,38,43,0.9), 12px 0 0 rgba(167,171,177,0.9)", duration: 0.05, repeat: 7, yoyo: true, ease: "steps(1)", immediateRender: false },
+            0.05,
+          );
+          tl.to("#s4-title", { opacity: 0, y: -40, duration: 0.5, ease: "power3.in" }, 3.0);
+          tl.fromTo("#s4-chapter", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 3.2);
+
+          // 3.5 s: four quadrants draw on
+          tl.fromTo("#s4-grid .cell", { opacity: 0, scale: 0.96 }, { opacity: 1, scale: 1, duration: 0.5, stagger: 0.15, ease: "back.out(1.6)" }, 3.5);
+
+          // focus helper: active cell full, others dimmed
+          var cells = ["#s4-q1", "#s4-q2", "#s4-q3", "#s4-q4"];
+          function focus(idx, t) {
+            cells.forEach(function (c, i) {
+              tl.to(c, { opacity: i === idx ? 1 : 0.32, duration: 0.3, ease: "power2.out" }, t);
+            });
+          }
+
+          // 4–14 s: Q1
+          focus(0, 4.5);
+          tl.fromTo("#s4-q1-can", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 5.0);
+          tl.fromTo("#s4-q1-bottle", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 5.4);
+          tl.fromTo("#s4-q1-text", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.7, ease: "power2.out" }, 6.2);
+
+          // 14–24 s: Q2 slogan slam
+          focus(1, 14.0);
+          tl.fromTo("#s4-q2-slogan", { scale: 1.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: "expo.out" }, 14.4);
+          tl.to("#s4-q2", { x: 8, duration: 1 / 30, ease: "power2.out" }, 14.9);
+          tl.to("#s4-q2", { x: -6, duration: 1 / 30, ease: "power2.out" }, 14.94);
+          tl.to("#s4-q2", { x: 0, duration: 1 / 30, ease: "power2.out" }, 14.98);
+          tl.fromTo("#s4-q2-ev", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "sine.out" }, 15.6);
+
+          // 24–40 s: Q3 fast montage — hard cuts every 4 s
+          focus(2, 24.0);
+          tl.to("#s4-q3-idle", { opacity: 0, duration: 0.01 }, 24.4);
+          ["#s4-k1", "#s4-k2", "#s4-k3", "#s4-k4"].forEach(function (k, i) {
+            var t = 24.4 + i * 3.9;
+            tl.set(k, { opacity: 1 }, t);
+            tl.fromTo(k + " .display", { x: 24 }, { x: 0, duration: 0.35, ease: "power3.out" }, t);
+            if (i < 3) tl.set(k, { opacity: 0 }, t + 3.9);
+          });
+
+          // 40–48 s: Q4
+          focus(3, 40.0);
+          tl.fromTo("#s4-b1", { rotation: -14 }, { rotation: 10, duration: 8, ease: "sine.inOut" }, 40.0);
+          tl.fromTo("#s4-b2", { rotation: 6 }, { rotation: -8, duration: 8, ease: "sine.inOut" }, 40.0);
+          tl.fromTo("#s4-b3", { rotation: 16 }, { rotation: -6, duration: 8, ease: "sine.inOut" }, 40.0);
+          tl.fromTo("#s4-q4-raised", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, ease: "power3.out" }, 40.6);
+
+          // 48–60 s: grid lifts; the conceptual chain draws left to right
+          cells.forEach(function (c) {
+            tl.to(c, { opacity: 0.85, duration: 0.4 }, 48.0);
+          });
+          tl.to("#s4-grid", { scale: 0.86, y: -20, duration: 1.0, ease: "power3.inOut" }, 48.0);
+          tl.fromTo("#s4-chain .node", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.9, ease: "power3.out" }, 49.0);
+          tl.fromTo("#s4-chain .arr", { scaleX: 0 }, { scaleX: 1, duration: 0.5, stagger: 0.9, ease: "power2.inOut" }, 49.5);
+          tl.fromTo("#s4-chain .note", { opacity: 0 }, { opacity: 1, duration: 0.8, ease: "sine.out" }, 53.0);
+
+          tl.to("#s4", { opacity: 0, duration: 0.8, ease: "power2.in" }, 59.2);
+          window.__timelines["s4-mechanism"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

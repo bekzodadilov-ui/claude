@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Liquid Death — How Marketing Made Water Cool</title>
+    <script src="vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0c0c0e;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background: #0c0c0e;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="385" data-width="1920" data-height="1080">
+      <!-- Scenes (track 1) -->
+      <div id="s1-hook" data-composition-id="s1-hook" data-composition-src="compositions/s1-hook.html" data-start="0" data-duration="35" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s2-category" data-composition-id="s2-category" data-composition-src="compositions/s2-category.html" data-start="35" data-duration="40" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s3-reveal" data-composition-id="s3-reveal" data-composition-src="compositions/s3-reveal.html" data-start="75" data-duration="45" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s4-mechanism" data-composition-id="s4-mechanism" data-composition-src="compositions/s4-mechanism.html" data-start="120" data-duration="60" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s5-consumer" data-composition-id="s5-consumer" data-composition-src="compositions/s5-consumer.html" data-start="180" data-duration="50" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s6-meaning" data-composition-id="s6-meaning" data-composition-src="compositions/s6-meaning.html" data-start="230" data-duration="45" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s7-ethics" data-composition-id="s7-ethics" data-composition-src="compositions/s7-ethics.html" data-start="275" data-duration="65" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s8-close" data-composition-id="s8-close" data-composition-src="compositions/s8-close.html" data-start="340" data-duration="30" data-track-index="1" data-width="1920" data-height="1080"></div>
+      <div id="s9-references" data-composition-id="s9-references" data-composition-src="compositions/s9-references.html" data-start="370" data-duration="15" data-track-index="1" data-width="1920" data-height="1080"></div>
+
+      <!-- Film grain over everything (track 2) -->
+      <div id="grain" data-composition-id="grain" data-composition-src="compositions/grain.html" data-start="0" data-duration="385" data-track-index="2" data-width="1920" data-height="1080"></div>
+
+      <!-- Music bed with baked-in transition SFX (track 3) -->
+      <audio id="music" src="assets/music.mp3" data-start="0" data-duration="385" data-track-index="3" data-volume="1"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

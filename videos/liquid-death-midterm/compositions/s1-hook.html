@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S1 Hook</title>
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="../assets/theme.css" />
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          font-family: "Montserrat", sans-serif;
+        }
+        #root .display,
+        #root .ghost,
+        #root .can-word {
+          font-family: "League Gothic", sans-serif;
+        }
+        #root .mono,
+        #root .tag,
+        #root .src {
+          font-family: "IBM Plex Mono", monospace;
+        }
+        #s1-type {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s1-type .display {
+          font-size: 170px;
+          white-space: nowrap;
+        }
+        #s1-type .ch {
+          display: inline-block;
+          opacity: 0;
+        }
+        #s1-bright {
+          position: absolute;
+          inset: 0;
+          background: #d6d7d9;
+          opacity: 0;
+        }
+        #s1-bright-stage {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #s1-bottle-wrap {
+          position: relative;
+          width: 150px;
+          height: 520px;
+        }
+        #s1-bottle-shadow {
+          position: absolute;
+          left: -60px;
+          right: -60px;
+          bottom: -26px;
+          height: 40px;
+          border-radius: 50%;
+          background: radial-gradient(closest-side, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0));
+        }
+        #s1-bright-label {
+          position: absolute;
+          left: 120px;
+          bottom: 90px;
+          color: #3a3c40;
+        }
+        #s1-dark {
+          position: absolute;
+          inset: 0;
+          opacity: 0;
+        }
+        #s1-push {
+          position: absolute;
+          inset: 0;
+          transform-origin: 72% 55%;
+        }
+        #s1-spot {
+          left: 1000px;
+          top: -180px;
+          width: 1100px;
+          height: 1400px;
+        }
+        #s1-ghost {
+          left: -40px;
+          bottom: -40px;
+          font-size: 520px;
+        }
+        #s1-can-wrap {
+          position: absolute;
+          left: 1400px;
+          top: 150px;
+        }
+        #s1-can-floor {
+          position: absolute;
+          left: 1310px;
+          top: 940px;
+          width: 480px;
+          height: 60px;
+          border-radius: 50%;
+          background: radial-gradient(closest-side, rgba(217, 220, 224, 0.14), rgba(0, 0, 0, 0));
+        }
+        #s1-q {
+          position: absolute;
+          left: 120px;
+          top: 300px;
+          width: 1150px;
+        }
+        #s1-q-text {
+          font-size: 168px;
+          transform-origin: 0% 50%;
+        }
+        #s1-q-text span {
+          display: block;
+        }
+        #s1-q-text .red-word {
+          color: var(--ink);
+        }
+        #s1-sub {
+          margin-top: 48px;
+          width: 980px;
+          font-size: 40px;
+          color: var(--ink);
+        }
+        #s1-rule {
+          margin-top: 40px;
+          width: 220px;
+        }
+        #s1-illus {
+          position: absolute;
+          right: 120px;
+          bottom: 56px;
+          opacity: 0;
+        }
+        #s1-runner {
+          opacity: 0;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s1-hook" data-width="1920" data-height="1080">
+        <div class="sc" id="s1">
+          <div id="s1-type"><div class="display" id="s1-type-line"></div></div>
+
+          <div id="s1-bright">
+            <div id="s1-bright-stage">
+              <div id="s1-bottle-wrap">
+                <div id="s1-bottle-shadow"></div>
+                <div class="bottle">
+                  <div class="b-cap"></div>
+                  <div class="b-neck"></div>
+                  <div class="b-shoulder"></div>
+                  <div class="b-body"></div>
+                  <div class="b-label"></div>
+                </div>
+              </div>
+            </div>
+            <div class="mono" id="s1-bright-label">Standard bottled water · illustration</div>
+          </div>
+
+          <div id="s1-dark">
+            <div id="s1-push">
+              <div class="ghost" id="s1-ghost" aria-hidden="true" data-layout-ignore>WATER</div>
+              <div class="spot" id="s1-spot"></div>
+              <div id="s1-can-floor"></div>
+              <div id="s1-can-wrap">
+                <div class="can">
+                  <div class="can-lid"></div>
+                  <div class="can-neck"></div>
+                  <div class="can-body">
+                    <svg class="can-mark" viewBox="0 0 100 100">
+                      <path d="M50 4 C24 4 8 22 8 46 C8 62 16 72 26 78 L26 96 L40 96 L40 86 L46 86 L46 96 L54 96 L54 86 L60 86 L60 96 L74 96 L74 78 C84 72 92 62 92 46 C92 22 76 4 50 4 Z" fill="#a7abb1" />
+                      <ellipse cx="33" cy="48" rx="11" ry="13" fill="#0c0c0e" />
+                      <ellipse cx="67" cy="48" rx="11" ry="13" fill="#0c0c0e" />
+                      <path d="M50 60 L44 72 L56 72 Z" fill="#0c0c0e" />
+                    </svg>
+                    <div class="can-word"><span>LIQUID</span><span>DEATH</span></div>
+                    <div class="can-band"></div>
+                    <div class="can-shine"></div>
+                  </div>
+                  <div class="can-base"></div>
+                </div>
+              </div>
+            </div>
+            <div class="vignette" data-layout-allow-occlusion></div>
+
+            <div id="s1-q">
+              <div class="display" id="s1-q-text"><span>THEN WHY DOES IT</span><span>LOOK LIKE THIS?</span></div>
+              <div class="rule red" id="s1-rule"></div>
+              <div class="body" id="s1-sub">How can marketing make an ordinary product feel culturally different?</div>
+            </div>
+            <div class="mono runner" id="s1-runner">Liquid Death · a marketing case analysis</div>
+            <div class="mono" id="s1-illus">Can shown as illustration · not brand artwork</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var line = document.getElementById("s1-type-line");
+          var text = "IT'S JUST WATER.";
+          for (var i = 0; i < text.length; i++) {
+            var s = document.createElement("span");
+            s.className = "ch";
+            s.textContent = text[i] === " " ? " " : text[i];
+            line.appendChild(s);
+          }
+
+          var tl = gsap.timeline({ paused: true });
+
+          // 3–8 s: the statement types on, holds, cuts away
+          tl.to("#s1-type .ch", { opacity: 1, duration: 0.01, stagger: 0.09, ease: "none" }, 3.0);
+          tl.to("#s1-type", { opacity: 0, duration: 0.4, ease: "power2.in" }, 7.6);
+
+          // 8–14 s: the plain bottle in flat, clinical light
+          tl.set("#s1-bright", { opacity: 1 }, 8.0);
+          tl.fromTo("#s1-bright-stage", { scale: 1 }, { scale: 1.04, duration: 6, ease: "none" }, 8.0);
+          tl.fromTo("#s1-bright-label", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, 9.0);
+          tl.set("#s1-bright", { opacity: 0 }, 14.0);
+
+          // 14 s: hard cut to darkness; the can rises into the spotlight
+          tl.set("#s1-dark", { opacity: 1 }, 14.0);
+          tl.fromTo("#s1-spot", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 2.6, ease: "power2.out" }, 14.2);
+          tl.fromTo("#s1-can-wrap", { y: 160, opacity: 0 }, { y: 0, opacity: 1, duration: 2.8, ease: "power3.out" }, 14.5);
+          tl.fromTo("#s1-can-floor", { opacity: 0 }, { opacity: 1, duration: 2, ease: "sine.out" }, 15.5);
+          tl.fromTo("#s1-ghost", { x: 0, opacity: 0 }, { x: -160, opacity: 1, duration: 20, ease: "none" }, 15.0);
+          tl.fromTo("#s1-push", { scale: 1 }, { scale: 1.07, duration: 21, ease: "sine.inOut" }, 14.0);
+          tl.fromTo("#s1-illus", { opacity: 0 }, { opacity: 0.85, duration: 1, ease: "sine.out" }, 18.0);
+
+          // 24 s: the question slams in (headline-slam mechanics: 1.6 → 1, three-frame shake)
+          tl.fromTo("#s1-q-text", { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.58, ease: "expo.out" }, 24.0);
+          tl.to("#s1-q", { x: 10, y: -6, duration: 1 / 30, ease: "power2.out" }, 24.58);
+          tl.to("#s1-q", { x: -7, y: 4, duration: 1 / 30, ease: "power2.out" }, 24.62);
+          tl.to("#s1-q", { x: 0, y: 0, duration: 1 / 30, ease: "power2.out" }, 24.66);
+          tl.fromTo("#s1-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 25.2);
+
+          // 29 s: the exam question, in plain language
+          tl.fromTo("#s1-sub", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" }, 29.0);
+          tl.fromTo("#s1-runner", { opacity: 0 }, { opacity: 0.8, duration: 1.0, ease: "sine.out" }, 29.6);
+
+          // 33.6 s: brief RGB glitch on the question (glitch use 1 of 2), then out
+          tl.fromTo(
+            "#s1-q-text",
+            { textShadow: "0px 0 0 rgba(196,38,43,0), 0px 0 0 rgba(167,171,177,0)" },
+            {
+              textShadow: "-9px 0 0 rgba(196,38,43,0.9), 9px 0 0 rgba(167,171,177,0.9)",
+              duration: 0.06,
+              repeat: 5,
+              yoyo: true,
+              ease: "steps(1)",
+              immediateRender: false,
+            },
+            33.6,
+          );
+          tl.to("#s1-q-text", { x: 14, duration: 0.05, repeat: 3, yoyo: true, ease: "steps(1)" }, 33.65);
+          tl.to("#s1", { opacity: 0, duration: 0.35, ease: "power2.in" }, 34.6);
+
+          window.__timelines["s1-hook"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

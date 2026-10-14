@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S7 Critical ethical reflection</title>
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="../assets/theme.css" />
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          font-family: "Montserrat", sans-serif;
+        }
+        #root .display,
+        #root .ghost {
+          font-family: "League Gothic", sans-serif;
+        }
+        #root .mono,
+        #root .tag,
+        #root .src {
+          font-family: "IBM Plex Mono", monospace;
+        }
+        /* Restrained black-and-white register: no red anywhere in this scene */
+        #s7 {
+          background: #101011;
+        }
+        #s7 .tag.claim {
+          border-color: var(--ink-dim);
+          border-style: double;
+          border-width: 4px;
+        }
+        #s7 .tag.claim::before {
+          background: var(--ink-dim);
+        }
+        #s7-ghost {
+          left: 80px;
+          bottom: -60px;
+          font-size: 380px;
+          color: rgba(236, 235, 231, 0.07);
+        }
+        #s7-qs .q {
+          position: absolute;
+          left: 120px;
+          top: 330px;
+          width: 1500px;
+          opacity: 0;
+        }
+        #s7-qs .q .mono {
+          font-size: 24px;
+          margin-bottom: 26px;
+        }
+        #s7-qs .q .display {
+          font-size: 128px;
+          color: #dcdcd8;
+        }
+        #s7-cols {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 210px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 80px;
+        }
+        #s7-cols .col .display {
+          font-size: 92px;
+          padding-bottom: 18px;
+          border-bottom: 2px solid var(--silver);
+          margin-bottom: 18px;
+        }
+        #s7-cols .col .it {
+          font-size: 38px;
+          color: var(--ink);
+          padding: 20px 0 20px 34px;
+          border-bottom: 1px solid var(--line);
+          position: relative;
+        }
+        #s7-cols .col .it::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 40px;
+          width: 14px;
+          height: 2px;
+          background: var(--silver);
+        }
+        #s7-concerns .display {
+          color: var(--ink-dim);
+        }
+        #s7-life {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 200px;
+        }
+        #s7-claim {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+        }
+        #s7-claim .display {
+          font-size: 88px;
+        }
+        #s7-strip {
+          margin-top: 54px;
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+        #s7-strip .node {
+          padding: 18px 22px;
+          border: 2px solid var(--silver);
+          font-size: 54px;
+          white-space: nowrap;
+        }
+        #s7-strip .arr {
+          flex: 1;
+          height: 2px;
+          background: var(--silver);
+          position: relative;
+          transform-origin: 0% 50%;
+        }
+        #s7-strip .arr::after {
+          content: "";
+          position: absolute;
+          right: -2px;
+          top: -7px;
+          border-left: 12px solid var(--silver);
+          border-top: 8px solid transparent;
+          border-bottom: 8px solid transparent;
+        }
+        #s7-facts {
+          margin-top: 54px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+        }
+        #s7-facts .body {
+          font-size: 34px;
+          color: var(--ink);
+          margin-bottom: 16px;
+        }
+        #s7-end {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 350px;
+        }
+        #s7-end .display {
+          font-size: 140px;
+        }
+        #s7-end .body {
+          font-size: 44px;
+          color: var(--ink);
+          margin: 26px 0 26px;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s7-ethics" data-width="1920" data-height="1080">
+        <div class="sc" id="s7">
+          <div class="ghost" id="s7-ghost" aria-hidden="true" data-layout-ignore>Reflection</div>
+          <div class="mono chapter" id="s7-chapter"><span class="num">07</span><span class="bar"></span><span>Critical ethical reflection</span></div>
+          <div class="mono runner">Liquid Death · how marketing made water cool</div>
+
+          <div id="s7-qs">
+            <div class="q" id="s7-q1"><div class="mono">Question 1 of 3</div><div class="display">Are consumers paying for the product or its image?</div></div>
+            <div class="q" id="s7-q2"><div class="mono">Question 2 of 3</div><div class="display">When does emotional persuasion become manipulation?</div></div>
+            <div class="q" id="s7-q3"><div class="mono">Question 3 of 3</div><div class="display">Does recyclable packaging automatically mean environmental sustainability?</div></div>
+          </div>
+
+          <div id="s7-cols">
+            <div class="col" id="s7-benefits">
+              <div class="display">Potential benefits</div>
+              <div class="it">Creative differentiation</div>
+              <div class="it">Entertaining advertising</div>
+              <div class="it">A distinctive non-alcoholic beverage identity</div>
+            </div>
+            <div class="col" id="s7-concerns">
+              <div class="display">Potential concerns</div>
+              <div class="it">Paying a premium for brand symbolism</div>
+              <div class="it">Emotional influence on purchasing decisions</div>
+              <div class="it">Environmental claims requiring independent evidence</div>
+            </div>
+          </div>
+
+          <div id="s7-life">
+            <div id="s7-claim"><div class="display">"Infinitely recyclable"</div><span class="tag claim">Company claim</span></div>
+            <div id="s7-strip">
+              <div class="display node">Collection</div>
+              <div class="arr"></div>
+              <div class="display node">Recycling</div>
+              <div class="arr"></div>
+              <div class="display node">Manufacturing</div>
+              <div class="arr"></div>
+              <div class="display node">Transport</div>
+              <div class="arr"></div>
+              <div class="display node">Disposal</div>
+            </div>
+            <div id="s7-facts">
+              <div id="s7-f1">
+                <div class="body">U.S., 2018: <strong>50.4%</strong> of aluminum beer and soft-drink cans were recycled; <strong>34.9%</strong> of all aluminum containers and packaging.</div>
+                <div class="evidence"><span class="tag fact">Verified fact</span><span class="src">U.S. EPA, Facts and Figures</span></div>
+              </div>
+              <div id="s7-f2">
+                <div class="body">Aluminum cans also carry a thin plastic liner, and packaged water is still less sustainable than refilling a reusable bottle.</div>
+                <div class="evidence"><span class="tag analysis">Critique</span><span class="src">Packaging Digest · TechCrunch</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="s7-end">
+            <div class="display">Recyclable ≠ automatically sustainable.</div>
+            <div class="body">Not inherently unethical, but environmental claims need independent evidence.</div>
+            <div class="evidence"><span class="tag analysis">Analysis</span></div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var tl = gsap.timeline({ paused: true });
+          // slow fade through black
+          tl.fromTo("#s7", { opacity: 0 }, { opacity: 1, duration: 2.0, ease: "sine.inOut" }, 0);
+          tl.fromTo("#s7-chapter", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "sine.out" }, 1.0);
+          tl.fromTo("#s7-ghost", { x: 0 }, { x: -200, duration: 65, ease: "none" }, 0);
+
+          // 1–21 s: three questions, one at a time, slow crossfades
+          [1.2, 8.0, 14.8].forEach(function (t, i) {
+            var q = "#s7-q" + (i + 1);
+            tl.fromTo(q, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.4, ease: "sine.out" }, t);
+            tl.to(q, { opacity: 0, duration: 1.0, ease: "sine.in" }, t + 5.6);
+          });
+
+          // 21–40 s: balanced comparison
+          tl.fromTo("#s7-benefits .display, #s7-concerns .display", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.2, stagger: 0.6, ease: "sine.out" }, 21.6);
+          tl.fromTo("#s7-benefits .it", { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.9, stagger: 1.4, ease: "sine.out" }, 23.4);
+          tl.fromTo("#s7-concerns .it", { opacity: 0, x: -16 }, { opacity: 1, x: 0, duration: 0.9, stagger: 1.4, ease: "sine.out" }, 28.6);
+          tl.to("#s7-cols", { opacity: 0, duration: 1.2, ease: "sine.in" }, 38.6);
+
+          // 40–58 s: claim vs lifecycle vs evidence
+          tl.fromTo("#s7-claim", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "sine.out" }, 40.2);
+          tl.fromTo("#s7-strip .node", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.8, stagger: 1.0, ease: "sine.out" }, 42.0);
+          tl.fromTo("#s7-strip .arr", { scaleX: 0 }, { scaleX: 1, duration: 0.7, stagger: 1.0, ease: "sine.inOut" }, 42.5);
+          tl.fromTo("#s7-f1", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "sine.out" }, 47.6);
+          tl.fromTo("#s7-f2", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "sine.out" }, 51.0);
+          tl.to("#s7-life", { opacity: 0, duration: 1.2, ease: "sine.in" }, 57.2);
+
+          // 58–65 s: the measured conclusion
+          tl.fromTo("#s7-end .display", { opacity: 0 }, { opacity: 1, duration: 1.4, ease: "sine.out" }, 58.4);
+          tl.fromTo("#s7-end .body, #s7-end .evidence", { opacity: 0 }, { opacity: 1, duration: 1.2, stagger: 0.6, ease: "sine.out" }, 59.6);
+
+          tl.to("#s7", { opacity: 0, duration: 1.4, ease: "sine.inOut" }, 63.6);
+          window.__timelines["s7-ethics"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

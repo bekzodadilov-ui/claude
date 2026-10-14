@@ -76,3 +76,4 @@ If you have the INSEAD case, give me its title, author and year, and I'll swap i
 11. U.S. EPA. *Aluminum: Material-Specific Data* (Facts and Figures about Materials, Waste and Recycling, 2018 data).
 12. Schögel, M. & Grellmann, L.-E. (2024). *Liquid Death* teaching case. University of St. Gallen.
 13. Liquid Death. Official website, liquiddeath.com (brand messaging).
+14. Modern Retail. (2025). *How Liquid Death is tackling the soda wars.*

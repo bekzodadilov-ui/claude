@@ -1,0 +1,338 @@
+/* Liquid Death midterm — shared design tokens and primitives.
+   Palette: charcoal-black, warm white ink, metallic silver, one dark-red accent. */
+:root {
+  --bg: #0c0c0e;
+  --panel: #17181b;
+  --line: #2a2c31;
+  --ink: #ecebe7;
+  --ink-dim: #b9b8b3;
+  --silver: #a7abb1;
+  --silver-hi: #d9dce0;
+  --red: #9e1c20;
+  --red-hi: #c4262b;
+  --font-display: "League Gothic", "Oswald", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+.sc {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* Typography registers: statement / explanation / evidence */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.35;
+  color: var(--ink-dim);
+}
+
+.body strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+
+/* Evidence tags — the film's spine */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 2px solid var(--silver);
+  color: var(--ink);
+  background: rgba(12, 12, 14, 0.85);
+  white-space: nowrap;
+}
+
+.tag::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: currentColor;
+}
+
+.tag.fact {
+  border-color: var(--silver);
+  color: var(--silver-hi);
+}
+
+.tag.claim {
+  border-color: var(--red-hi);
+  color: var(--ink);
+}
+
+.tag.claim::before {
+  background: var(--red-hi);
+}
+
+.tag.analysis {
+  border-color: var(--ink);
+  border-style: dashed;
+  color: var(--ink);
+}
+
+.src {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  color: var(--silver);
+}
+
+.evidence {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Atmosphere */
+.spot {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(217, 220, 224, 0.26), rgba(217, 220, 224, 0.08) 55%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+}
+
+.glow-red {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(158, 28, 32, 0.32), rgba(158, 28, 32, 0) 100%);
+  pointer-events: none;
+}
+
+.ghost {
+  position: absolute;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: rgba(236, 235, 231, 0.07);
+  white-space: nowrap;
+  line-height: 0.8;
+  pointer-events: none;
+}
+
+.rule {
+  height: 3px;
+  background: var(--silver);
+  transform-origin: 0 50%;
+}
+
+.rule.red {
+  background: var(--red-hi);
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.7) 100%);
+  pointer-events: none;
+}
+
+/* The hero prop: a tall black aluminum can (illustration, not brand artwork) */
+.can {
+  position: relative;
+  width: 300px;
+  height: 820px;
+}
+
+.can .can-lid {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 0;
+  height: 46px;
+  border-radius: 50% / 100% 100% 0 0;
+  background: linear-gradient(90deg, #5d6066, #d9dce0 30%, #8a8e94 55%, #e8eaed 75%, #6b6e74);
+}
+
+.can .can-neck {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40px;
+  height: 40px;
+  clip-path: polygon(6% 0, 94% 0, 100% 100%, 0 100%);
+  background: linear-gradient(90deg, #4a4d52, #c9ccd1 28%, #7f838a 55%, #dcdfe3 76%, #55585e);
+}
+
+.can .can-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 78px;
+  bottom: 22px;
+  background: linear-gradient(90deg, #050506 0%, #1d1e21 18%, #3a3c41 27%, #141517 40%, #0a0a0b 70%, #232428 86%, #060607 100%);
+  overflow: hidden;
+}
+
+.can .can-base {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+  height: 26px;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  background: linear-gradient(90deg, #4a4d52, #c9ccd1 28%, #7f838a 55%, #dcdfe3 76%, #55585e);
+}
+
+.can .can-mark {
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  width: 150px;
+  margin-left: -75px;
+}
+
+.can .can-word {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 270px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 118px;
+  line-height: 0.86;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.can .can-word span {
+  display: block;
+}
+
+.can .can-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+  height: 4px;
+  background: var(--silver);
+  opacity: 0.6;
+}
+
+.can .can-shine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 22%;
+  width: 7%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0));
+}
+
+/* Generic plastic bottle silhouette */
+.bottle {
+  position: relative;
+  width: 150px;
+  height: 520px;
+}
+
+.bottle .b-cap {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 46px;
+  height: 34px;
+  margin-left: -23px;
+  border-radius: 4px;
+  background: #9aa1a9;
+}
+
+.bottle .b-neck {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  background: rgba(200, 210, 220, 0.55);
+}
+
+.bottle .b-shoulder {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 66px;
+  height: 90px;
+  clip-path: polygon(36% 0, 64% 0, 100% 100%, 0 100%);
+  background: rgba(200, 210, 220, 0.55);
+}
+
+.bottle .b-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 154px;
+  bottom: 0;
+  border-radius: 0 0 22px 22px;
+  background: linear-gradient(90deg, rgba(190, 200, 210, 0.45), rgba(235, 240, 245, 0.75) 35%, rgba(190, 200, 210, 0.5));
+}
+
+.bottle .b-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 250px;
+  height: 120px;
+  background: rgba(120, 130, 140, 0.55);
+}
+
+/* Chapter header shared by every scene */
+.chapter {
+  position: absolute;
+  left: 120px;
+  top: 64px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.chapter .num {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.chapter .bar {
+  width: 48px;
+  height: 2px;
+  background: var(--silver);
+}
+
+.runner {
+  position: absolute;
+  right: 120px;
+  top: 64px;
+  color: var(--silver);
+  opacity: 0.8;
+}

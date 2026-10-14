@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S8 Conclusion</title>
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="../assets/theme.css" />
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          font-family: "Montserrat", sans-serif;
+        }
+        #root .display,
+        #root .ghost,
+        #root .can-word {
+          font-family: "League Gothic", sans-serif;
+        }
+        #root .mono,
+        #root .tag,
+        #root .src {
+          font-family: "IBM Plex Mono", monospace;
+        }
+        #s8-stage {
+          position: absolute;
+          inset: 0;
+        }
+        #s8-spot {
+          left: 560px;
+          top: -200px;
+          width: 800px;
+          height: 1400px;
+        }
+        #s8-can {
+          position: absolute;
+          left: 810px;
+          top: 130px;
+          width: 300px;
+          height: 820px;
+        }
+        #s8-l1,
+        #s8-l2,
+        #s8-q {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          text-align: center;
+        }
+        #s8-l1 {
+          top: 330px;
+        }
+        #s8-l1 .display {
+          font-size: 140px;
+        }
+        #s8-l2 {
+          top: 520px;
+        }
+        #s8-l2 .display {
+          font-size: 220px;
+          color: var(--ink);
+        }
+        #s8-rule {
+          width: 360px;
+          margin: 24px auto 0;
+        }
+        #s8-q {
+          top: 380px;
+        }
+        #s8-q .display {
+          font-size: 132px;
+          line-height: 1;
+        }
+        #s8-q .display span {
+          display: block;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s8-close" data-width="1920" data-height="1080">
+        <div class="sc" id="s8">
+          <div id="s8-stage">
+            <div class="spot" id="s8-spot"></div>
+            <div id="s8-can"><div class="can"><div class="can-lid"></div><div class="can-neck"></div><div class="can-body"><svg class="can-mark" viewBox="0 0 100 100"><path d="M50 4 C24 4 8 22 8 46 C8 62 16 72 26 78 L26 96 L40 96 L40 86 L46 86 L46 96 L54 96 L54 86 L60 86 L60 96 L74 96 L74 78 C84 72 92 62 92 46 C92 22 76 4 50 4 Z" fill="#a7abb1" /><ellipse cx="33" cy="48" rx="11" ry="13" fill="#0c0c0e" /><ellipse cx="67" cy="48" rx="11" ry="13" fill="#0c0c0e" /><path d="M50 60 L44 72 L56 72 Z" fill="#0c0c0e" /></svg><div class="can-word"><span>LIQUID</span><span>DEATH</span></div><div class="can-band"></div><div class="can-shine"></div></div><div class="can-base"></div></div></div>
+            <div class="vignette" data-layout-allow-occlusion></div>
+          </div>
+
+          <div id="s8-l1"><div class="display">Marketing doesn't just sell products.</div></div>
+          <div id="s8-l2"><div class="display">It sells meaning.</div><div class="rule red" id="s8-rule"></div></div>
+          <div id="s8-q">
+            <div class="display"><span>Are we buying what a product does —</span><span>or what it represents?</span></div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s8", { opacity: 0 }, { opacity: 1, duration: 1.6, ease: "sine.inOut" }, 0);
+
+          // 0–8 s: callback to the hook — the can on black, slow zoom-out, spotlight narrows
+          tl.fromTo("#s8-can", { scale: 1.12, opacity: 0 }, { scale: 0.84, opacity: 1, duration: 8, ease: "sine.inOut" }, 0);
+          tl.fromTo("#s8-spot", { scaleX: 1.1, opacity: 1 }, { scaleX: 0.55, opacity: 0.8, duration: 8, ease: "sine.inOut" }, 0);
+          tl.to("#s8-stage", { opacity: 0.18, duration: 1.2, ease: "power2.inOut" }, 7.6);
+
+          // 8.5 s: line one, then a held beat where nothing moves
+          tl.fromTo("#s8-l1", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" }, 8.6);
+          // 13–17 s: hold (no tweens scheduled)
+
+          // 17 s: the thesis lands; the last red in the film
+          tl.fromTo("#s8-l2", { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.9, ease: "expo.out" }, 17.0);
+          tl.fromTo("#s8-rule", { scaleX: 0, transformOrigin: "50% 50%" }, { scaleX: 1, duration: 0.9, ease: "power3.inOut" }, 17.6);
+
+          // 21–30 s: the question handed to the audience, then fade to black
+          tl.to("#s8-l1, #s8-l2", { opacity: 0, duration: 0.9, ease: "power2.in" }, 21.0);
+          tl.fromTo("#s8-q", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1.4, ease: "sine.out" }, 22.0);
+          tl.to("#s8", { opacity: 0, duration: 2.0, ease: "sine.inOut" }, 28.0);
+
+          window.__timelines["s8-close"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

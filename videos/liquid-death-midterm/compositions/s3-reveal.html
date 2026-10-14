@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>S3 Introducing Liquid Death</title>
+  </head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="../assets/theme.css" />
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          font-family: "Montserrat", sans-serif;
+        }
+        #root .display,
+        #root .ghost,
+        #root .can-word {
+          font-family: "League Gothic", sans-serif;
+        }
+        #root .mono,
+        #root .tag,
+        #root .src {
+          font-family: "IBM Plex Mono", monospace;
+        }
+        #s3-spot {
+          left: 510px;
+          top: -260px;
+          width: 900px;
+          height: 1500px;
+        }
+        #s3-hero {
+          position: absolute;
+          left: 810px;
+          top: 150px;
+        }
+        #s3-ghost {
+          right: -60px;
+          top: 140px;
+          font-size: 420px;
+        }
+        #s3-crops {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 170px;
+          height: 600px;
+          display: flex;
+          gap: 40px;
+        }
+        #s3-crops .crop {
+          position: relative;
+          flex: 1;
+          overflow: hidden;
+          background: #111214;
+          border: 2px solid var(--line);
+        }
+        #s3-crops .crop .inner {
+          position: absolute;
+          left: 50%;
+          top: 0;
+          width: 300px;
+          height: 820px;
+          margin-left: -150px;
+        }
+        #s3-crops .crop .label {
+          position: absolute;
+          left: 24px;
+          top: 22px;
+        }
+        #s3-c1 .inner {
+          transform-origin: 50% 4%;
+        }
+        #s3-c2 .inner {
+          transform-origin: 50% 68%;
+        }
+        #s3-c3 .inner {
+          transform-origin: 50% 18%;
+        }
+        #s3-fact {
+          position: absolute;
+          left: 120px;
+          top: 820px;
+          width: 1680px;
+        }
+        #s3-fact .body {
+          font-size: 40px;
+          color: var(--ink);
+          margin-bottom: 18px;
+        }
+        #s3-split {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 180px;
+          height: 600px;
+          display: flex;
+          gap: 60px;
+          perspective: 1600px;
+        }
+        #s3-split .panel {
+          flex: 1;
+          padding: 54px 60px;
+          background: var(--panel);
+          border: 2px solid var(--line);
+        }
+        #s3-split .panel .mono {
+          color: var(--ink-dim);
+        }
+        #s3-split .panel .arrow {
+          margin: 22px 0 18px;
+          width: 120px;
+          height: 3px;
+          background: var(--silver);
+        }
+        #s3-split .panel .display {
+          font-size: 118px;
+          line-height: 0.98;
+        }
+        #s3-left .display {
+          color: var(--ink-dim);
+        }
+        #s3-right {
+          border-color: var(--silver) !important;
+        }
+        #s3-right .arrow {
+          background: var(--red-hi) !important;
+        }
+        #s3-line {
+          position: absolute;
+          left: 120px;
+          right: 120px;
+          top: 830px;
+        }
+        #s3-line .body {
+          font-size: 46px;
+          color: var(--ink);
+          margin-top: 18px;
+        }
+      </style>
+
+      <div id="root" data-composition-id="s3-reveal" data-width="1920" data-height="1080">
+        <div class="sc" id="s3">
+          <div class="mono chapter" id="s3-chapter"><span class="num">03</span><span class="bar"></span><span>Introducing Liquid Death</span></div>
+          <div class="mono runner">Liquid Death · how marketing made water cool</div>
+
+          <div id="s3-act1">
+            <div class="ghost" id="s3-ghost" aria-hidden="true" data-layout-ignore>DEATH</div>
+            <div class="spot" id="s3-spot"></div>
+            <div id="s3-hero"><div class="can"><div class="can-lid"></div><div class="can-neck"></div><div class="can-body"><svg class="can-mark" viewBox="0 0 100 100"><path d="M50 4 C24 4 8 22 8 46 C8 62 16 72 26 78 L26 96 L40 96 L40 86 L46 86 L46 96 L54 96 L54 86 L60 86 L60 96 L74 96 L74 78 C84 72 92 62 92 46 C92 22 76 4 50 4 Z" fill="#a7abb1" /><ellipse cx="33" cy="48" rx="11" ry="13" fill="#0c0c0e" /><ellipse cx="67" cy="48" rx="11" ry="13" fill="#0c0c0e" /><path d="M50 60 L44 72 L56 72 Z" fill="#0c0c0e" /></svg><div class="can-word"><span>LIQUID</span><span>DEATH</span></div><div class="can-band"></div><div class="can-shine"></div></div><div class="can-base"></div></div></div>
+            <div class="vignette" data-layout-allow-occlusion></div>
+          </div>
+
+          <div id="s3-crops">
+            <div class="crop" id="s3-c1"><div class="inner"><div class="can"><div class="can-lid"></div><div class="can-neck"></div><div class="can-body"><svg class="can-mark" viewBox="0 0 100 100"><path d="M50 4 C24 4 8 22 8 46 C8 62 16 72 26 78 L26 96 L40 96 L40 86 L46 86 L46 96 L54 96 L54 86 L60 86 L60 96 L74 96 L74 78 C84 72 92 62 92 46 C92 22 76 4 50 4 Z" fill="#a7abb1" /><ellipse cx="33" cy="48" rx="11" ry="13" fill="#0c0c0e" /><ellipse cx="67" cy="48" rx="11" ry="13" fill="#0c0c0e" /><path d="M50 60 L44 72 L56 72 Z" fill="#0c0c0e" /></svg><div class="can-word"><span>LIQUID</span><span>DEATH</span></div><div class="can-band"></div><div class="can-shine"></div></div><div class="can-base"></div></div></div><div class="tag fact label">Tall aluminum can</div></div>
+            <div class="crop" id="s3-c2"><div class="inner"><div class="can"><div class="can-lid"></div><div class="can-neck"></div><div class="can-body"><svg class="can-mark" viewBox="0 0 100 100"><path d="M50 4 C24 4 8 22 8 46 C8 62 16 72 26 78 L26 96 L40 96 L40 86 L46 86 L46 96 L54 96 L54 86 L60 86 L60 96 L74 96 L74 78 C84 72 92 62 92 46 C92 22 76 4 50 4 Z" fill="#a7abb1" /><ellipse cx="33" cy="48" rx="11" ry="13" fill="#0c0c0e" /><ellipse cx="67" cy="48" rx="11" ry="13" fill="#0c0c0e" /><path d="M50 60 L44 72 L56 72 Z" fill="#0c0c0e" /></svg><div class="can-word"><span>LIQUID</span><span>DEATH</span></div><div class="can-band"></div><div class="can-shine"></div></div><div class="can-base"></div></div></div><div class="tag fact label">Heavy-metal typography</div></div>
+            <div class="crop" id="s3-c3"><div class="inner"><div class="can"><div class="can-lid"></div><div class="can-neck"></div><div class="can-body"><svg class="can-mark" viewBox="0 0 100 100"><path d="M50 4 C24 4 8 22 8 46 C8 62 16 72 26 78 L26 96 L40 96 L40 86 L46 86 L46 96 L54 96 L54 86 L60 86 L60 96 L74 96 L74 78 C84 72 92 62 92 46 C92 22 76 4 50 4 Z" fill="#a7abb1" /><ellipse cx="33" cy="48" rx="11" ry="13" fill="#0c0c0e" /><ellipse cx="67" cy="48" rx="11" ry="13" fill="#0c0c0e" /><path d="M50 60 L44 72 L56 72 Z" fill="#0c0c0e" /></svg><div class="can-word"><span>LIQUID</span><span>DEATH</span></div><div class="can-band"></div><div class="can-shine"></div></div><div class="can-base"></div></div></div><div class="tag fact label">Skull iconography</div></div>
+          </div>
+
+          <div id="s3-fact">
+            <div class="body">Founded by <strong>Mike Cessario</strong> · first cans sold in <strong>2019</strong></div>
+            <div class="evidence"><span class="tag fact">Verified fact</span><span class="src">BeverageDaily (2024) · TechCrunch</span></div>
+          </div>
+
+          <div id="s3-split">
+            <div class="panel" id="s3-left">
+              <div class="mono">Conventional water branding</div>
+              <div class="arrow"></div>
+              <div class="display">Purity</div>
+              <div class="display">Nature</div>
+              <div class="display">Freshness</div>
+            </div>
+            <div class="panel" id="s3-right">
+              <div class="mono">Liquid Death branding</div>
+              <div class="arrow"></div>
+              <div class="display">Rebellion</div>
+              <div class="display">Humor</div>
+              <div class="display">Attitude</div>
+            </div>
+          </div>
+
+          <div id="s3-line">
+            <div class="evidence"><span class="tag analysis">Analysis</span></div>
+            <div class="body">Not a new liquid. A new identity built around it.</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          var tl = gsap.timeline({ paused: true });
+          tl.fromTo("#s3", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "sine.out" }, 0);
+          tl.fromTo("#s3-chapter", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }, 0.6);
+
+          // 0–8 s: the spotlight opens; the can is revealed
+          tl.fromTo("#s3-spot", { opacity: 0, scaleX: 0.15 }, { opacity: 1, scaleX: 1, duration: 3.0, ease: "power2.inOut" }, 1.0);
+          tl.fromTo("#s3-hero", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 3.2, ease: "power2.out" }, 1.8);
+          tl.fromTo("#s3-ghost", { opacity: 0, x: 0 }, { opacity: 1, x: -120, duration: 7, ease: "none" }, 1.0);
+          tl.to("#s3-act1", { opacity: 0, duration: 0.8, ease: "power2.in" }, 7.4);
+
+          // 8–20 s: three macro crops with slow internal parallax
+          var cropScale = { "#s3-c1": 2.4, "#s3-c2": 1.45, "#s3-c3": 2.6 };
+          ["#s3-c1", "#s3-c2", "#s3-c3"].forEach(function (id, i) {
+            var t = 8.2 + i * 3.4;
+            tl.fromTo(id, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, t);
+            tl.fromTo(id + " .inner", { scale: cropScale[id] * 1.08, y: 20 }, { scale: cropScale[id], y: -20, duration: 20 - i * 3.4, ease: "none" }, t);
+          });
+
+          // 20–28 s: who and when
+          tl.fromTo("#s3-fact", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, 20.0);
+          tl.to("#s3-crops, #s3-fact", { opacity: 0, duration: 0.8, ease: "power2.in" }, 27.2);
+
+          // 28–45 s: the value contrast, book-open from opposite wings
+          tl.fromTo("#s3-left", { opacity: 0, rotationY: 28, x: -120, transformOrigin: "0% 50%" }, { opacity: 1, rotationY: 0, x: 0, duration: 1.2, ease: "power3.out" }, 28.2);
+          tl.fromTo("#s3-right", { opacity: 0, rotationY: -28, x: 120, transformOrigin: "100% 50%" }, { opacity: 1, rotationY: 0, x: 0, duration: 1.2, ease: "power3.out" }, 29.4);
+          tl.fromTo("#s3-left .display", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.6, stagger: 0.35, ease: "power2.out" }, 29.4);
+          tl.fromTo("#s3-right .display", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.6, stagger: 0.35, ease: "power2.out" }, 31.6);
+          tl.fromTo("#s3-split .arrow", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.8, stagger: 1.2, ease: "power3.inOut" }, 29.0);
+          tl.fromTo("#s3-line", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1.0, ease: "power2.out" }, 37.0);
+
+          tl.to("#s3", { opacity: 0, x: -60, duration: 1.0, ease: "power2.in" }, 44.0);
+          window.__timelines["s3-reveal"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

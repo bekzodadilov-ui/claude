@@ -42,10 +42,20 @@ mode: collaborative
 - **Truthfulness line:** the can is an illustration; ads are cited as text cards,
   not reproduced. Facts are listed in SOURCES.md.
 
-## Still open
+## Locked
 
-- INSEAD case not found; St. Gallen 2024 case substituted. Confirm, or supply the INSEAD reference.
-- Music: synthesized bed + SFX (recommended), or a silent track if you'd rather speak over silence.
+The user said "do everything as you see fit", so the recommended defaults were taken:
+
+- Plan v1 approved as written; the sketch pass was skipped and the build went straight from the plan.
+- INSEAD case not found; the St. Gallen 2024 teaching case is used instead (swap it if the INSEAD reference turns up).
+- Music: procedural bed + SFX (tools/make-music.mjs), about −28.5 LUFS integrated so it sits under a live voice.
+- Length: 6:25, with the references card after the 6:10 conclusion.
+
+## Build notes (changes from v1)
+
+- S4 Q3 card 4 retitled "Back-sweat taste test · 2023" so it fits the panel.
+- S6 milestone spacing tightened so the pan ends on 2022–2024 fully in frame.
+- References list grew to 14 (Modern Retail added for the 2022/2023 expansion dates).
 
 ## Frame 1 — Hook (0:00–0:35, 35s)
 
@@ -53,7 +63,7 @@ mode: collaborative
 - duration: 35s
 - transition_in: cut
 - src: compositions/s1-hook.html
-- status: outline
+- status: animated
 - motion: kinetic-type-beats (statement build) + titlecard-reveal (held question); slow push-in on the can
 
 Beats: 0–3 s black. 3–8 s "IT'S JUST WATER." types in white, centered (the one centered
@@ -71,7 +81,7 @@ Why: the hook asks the exam question in outcome language.
 - duration: 40s
 - transition_in: cut
 - src: compositions/s2-category.html
-- status: outline
+- status: animated
 - motion: grid-card-assemble (shelf builds in staggered cascade) + slow lateral parallax
 
 Beats: 0–10 s a shelf of ~24 bottle silhouettes in three rows assembles left→right, desaturated,
@@ -90,7 +100,7 @@ Why: sets the baseline that the need predates the brand.
 - duration: 45s
 - transition_in: crossfade
 - src: compositions/s3-reveal.html
-- status: outline
+- status: animated
 - motion: logo-assemble-lockup (wordmark set letter-by-letter on the can) → comparison-split
 
 Beats: 0–8 s darkness, then a spotlight cone opens on the can (silver rim light).
@@ -109,7 +119,7 @@ Constraint: no reproduced logo art. Why: names the differentiator: identity, not
 - duration: 60s
 - transition_in: cut (glitch use 2 of 2)
 - src: compositions/s4-mechanism.html
-- status: outline
+- status: animated
 - motion: grid-card-assemble (quadrants) + fast hard-cut montage in Q3 + arrow draw-on chain
 
 Beats (energy up, music rises): 0–4 s four quadrant frames draw on (hairline silver).
@@ -132,7 +142,7 @@ Why: the mechanism, i.e. how meaning is built.
 - duration: 50s
 - transition_in: crossfade
 - src: compositions/s5-consumer.html
-- status: outline
+- status: animated
 - motion: kinetic-type-beats (line extends) + constellation-hub (words settle around the can)
 
 Beats: 0–14 s left: "BEFORE" / "I need water." Right: "AFTER" / "I need water, and I prefer a brand
@@ -150,7 +160,7 @@ Why: the consumer-psychology core of the argument.
 - duration: 45s
 - transition_in: crossfade
 - src: compositions/s6-meaning.html
-- status: outline
+- status: animated
 - motion: kinetic-type-beats (equation build) + spatial-pan-stations (milestone rail)
 
 Beats: 0–8 s the can's flat grey outline fills to black-and-silver (container → object).
@@ -167,7 +177,7 @@ Why: differentiation that turned into business scale, stated with sourced milest
 - duration: 65s
 - transition_in: slow fade through black (2 s)
 - src: compositions/s7-ethics.html
-- status: outline
+- status: animated
 - motion: titlecard-reveal chain (questions) → comparison-split → lifecycle arrows draw on
 
 Beats (music drops low, no red anywhere): 0–21 s three questions, one at a time (~7 s each), serif-free
@@ -190,7 +200,7 @@ Why: balanced critique that keeps facts and interpretation apart.
 - duration: 30s
 - transition_in: slow fade through black
 - src: compositions/s8-close.html
-- status: outline
+- status: animated
 - motion: zoom-out (can recedes into darkness) + kinetic-type-beats + held frame
 
 Beats: 0–8 s the can, 1.10→0.85 zoom-out, spotlight narrows. 8–13 s "MARKETING DOESN'T JUST SELL PRODUCTS."
@@ -204,7 +214,7 @@ Why: restates the thesis and returns the question to the audience.
 - duration: 15s
 - transition_in: fade from black
 - src: compositions/s9-references.html
-- status: outline
+- status: animated
 - motion: titlecard-reveal (one move: slow rise)
 
 13 references from SOURCES.md, plus "Can and ads shown as illustrations; no brand footage used."

@@ -24,7 +24,7 @@ Every number in the deck comes from these five sources. Numbers in brackets matc
 - **"88% of area / 92% of volume lost since 1960."** This is real NASA EO text (a Philip Micklin quote), but it's on a *different* EO article. Adding it would make a 6th reference.
 - **"Clothing production doubled 2000–2014."** The report's wording is "the last 15 years" with data to 2015, so the deck uses 2000 → 2015.
 
-## Satellite images (not downloaded: nasa.gov blocked in this sandbox)
+## Satellite images (in the deck: your NASA EO screenshots, aligned and cropped identically)
 Usage: NASA Earth Observatory images are free to reuse with credit. The slide credits "IMAGES: NASA EARTH OBSERVATORY".
 1. Open https://science.nasa.gov/earth/earth-observatory/world-of-change/aral-sea/
 2. Download the full-size **2000** image and the **latest-year** image from the series slider.

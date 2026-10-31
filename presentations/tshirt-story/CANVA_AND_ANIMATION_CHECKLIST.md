@@ -4,7 +4,7 @@
 - [ ] Canva → **Create → Import file** (or drag `The-Story-of-a-T-Shirt.pptx` onto the Canva home page).
 - [ ] Check the fonts. All of these exist in Canva: Anton, Archivo Black, DM Serif Display (italic), Dancing Script, Montserrat. If a text box shows "Montserrat Medium" as missing, select it → Montserrat → **Medium**.
 - [ ] Check the **transparency**. Corner info (bottom) should be **60%**, and inactive stage-tracker words and dots (slides 2–5) **40%**. If Canva imported them at full strength, select them → Transparency → 60 / 40.
-- [ ] Slide 3: drop the two NASA images into the sand placeholders (same size, so 1:1). Set the second year to the actual latest year if it isn't 2018.
+- [ ] Slide 3: the NASA images are already in. Check the second year label (2018) matches the image you downloaded.
 - [ ] Slide 5: replace the sand placeholder with a clothing-landfill photo (landscape, ≥1920×1080). Then **Position → Backward** until it sits under the dark gradient.
 - [ ] Slide 1: replace the T-shirt photo with the licensed (un-watermarked) version.
 - [ ] Slide 4 chart: if Canva turns the native chart into a static image, delete it and rebuild with **Elements → Charts → Bar**, using the data below. Or place `chart/chart_made_vs_worn.png` (transparent).

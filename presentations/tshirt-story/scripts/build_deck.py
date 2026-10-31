@@ -309,7 +309,7 @@ rule(s, px0 + 80, EDGE + 36)
 SAT = 360
 for i, (fname, year, l1, l2) in enumerate([
         ("aral_before.jpg", "2000", "Eastern basin", "still holds water"),
-        ("aral_after.jpg", "2018", "Eastern basin", "dry since 2014")]):
+        ("aral_after.jpg", "2018", "Eastern basin first", "ran dry in 2014")]):
     sx, sy = px0 + 80, 150 + i * (SAT + 40)
     shape(s, sx - 6, sy - 6, SAT + 12, SAT + 12, "sand", name="Satellite border")
     sat = IMG / fname

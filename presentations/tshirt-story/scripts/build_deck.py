@@ -415,14 +415,9 @@ notes(s, [
 
 # ---------- 5  THROW
 s = prs.slides.add_slide(BLANK)
-background(s, "sand")
-placeholder(s, 0, 0, W, H, "", "", name="Photo slot E placeholder")
+background(s, "oxblood")
+photo(s, "E")
 picture(s, IMG / "grad_s5.png", 0, 0, W, H, name="Photo gradient")
-text(s, 1000, EDGE - 4, 840, 90,
-     [[micro("PHOTO NEEDED · SLOT E", "oxblood", 13)],
-      [R("Clothing landfill / textile waste, landscape, min. 1920 × 1080 px",
-         "Montserrat Medium", 12, "oxblood")]],
-     align="right", line=20, name="Placeholder label")
 tracker(s, {"THROW"}, "cream", bg="oxblood")
 text(s, MARGIN, 180, 1700, 600,
      [[R("ONE TRUCK.", "Anton", 140, "cream")], [R("EVERY SECOND.", "Anton", 140, "cream")]],

@@ -20,6 +20,7 @@ FRAMES = {
     "B": dict(src="cotton_field.jpg",       x=1240, y=190, w=560, h=720,  cx=0.50,  cy=0.50),
     "C": dict(src="aral_moynaq_ship.jpg",   x=0,    y=0,   w=1056, h=1080, cx=0.445, cy=0.50),
     "D": dict(src="textile_factory.jpg",    x=120,  y=316, w=820, h=584,  cx=0.55,  cy=0.50),
+    "E": dict(src="landfill.jpg",           x=0,    y=0,   w=1920, h=1080, cx=0.50,  cy=0.62),
     "F": dict(src="fast_fashion_racks.jpg", x=152,  y=196, w=756, h=240,  cx=0.50,  cy=0.50),
     "G": dict(src="secondhand_market.jpg",  x=1012, y=196, w=756, h=240,  cx=0.50,  cy=0.52),
 }

@@ -74,6 +74,6 @@ gradient(FRAMES["A"]["w"], 1080, [(0, 0), (0.72, 0), (1, 0.7)], "grad_s1.png")
 # Slide 3: top band for the stage tracker, heavy bottom for the headline.
 gradient(FRAMES["C"]["w"], 1080, [(0, 0.7), (0.3, 0.45), (0.5, 0.1), (0.72, 0.35), (1, 0.92)], "grad_s3.png")
 # Slide 5: full bleed, same recipe.
-gradient(W, H, [(0, 0.55), (0.18, 0.2), (0.4, 0.15), (0.65, 0.6), (1, 0.92)], "grad_s5.png")
+gradient(W, H, [(0, 0.6), (0.25, 0.5), (0.5, 0.55), (0.75, 0.75), (1, 0.92)], "grad_s5.png")
 
 print("\n".join(report))

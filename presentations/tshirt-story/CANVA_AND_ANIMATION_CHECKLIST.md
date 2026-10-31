@@ -1,37 +1,93 @@
-# Canva import + animation checklist
+# Canva: импорт и анимация, шаг за шагом
 
-## A. Import (Canva could not be reached from the build sandbox)
-- [ ] Canva → **Create → Import file** (or drag `The-Story-of-a-T-Shirt.pptx` onto the Canva home page).
-- [ ] Check the fonts. All of these exist in Canva: Anton, Archivo Black, DM Serif Display (italic), Dancing Script, Montserrat. If a text box shows "Montserrat Medium" as missing, select it → Montserrat → **Medium**.
-- [ ] Check the **transparency**. Corner info (bottom) should be **60%**, and inactive stage-tracker words and dots (slides 2–5) **40%**. If Canva imported them at full strength, select them → Transparency → 60 / 40.
-- [ ] Slide 3: the NASA images are already in. Check the second year label (2018) matches the image you downloaded.
-- [ ] Slide 5: replace the sand placeholder with a clothing-landfill photo (landscape, ≥1920×1080). Then **Position → Backward** until it sits under the dark gradient.
-- [ ] Slide 1: replace the T-shirt photo with the licensed (un-watermarked) version.
-- [ ] Slide 4 chart: if Canva turns the native chart into a static image, delete it and rebuild with **Elements → Charts → Bar**, using the data below. Or place `chart/chart_made_vs_worn.png` (transparent).
+Названия кнопок даны по-английски, в скобках — примерный русский вариант. Если Canva у тебя на русском, подписи могут немного отличаться.
 
-**Chart data** (index, 2000 = 100, source [4]):
+## Шаг 1. Импорт
+1. Открой canva.com → **Create (Создать) → Import file (Импорт файла)** → выбери `The-Story-of-a-T-Shirt.pptx` (или просто перетащи файл на главную страницу Canva).
+2. Дождись, пока откроется презентация из 7 страниц (1920×1080).
 
-| Bar | Value | Colour |
+## Шаг 2. Проверка после импорта (2 минуты)
+1. **Шрифты.** Пролистай слайды. Если где-то шрифт подчёркнут как отсутствующий («Montserrat Medium»): выдели текст → в списке шрифтов выбери **Montserrat** → толщина **Medium**.
+2. **Прозрачность.** Подпись внизу слева, номер страницы справа и строка `GROW · MAKE · WEAR · THROW` должны быть бледными. Если они яркие:
+   - выдели подпись внизу и номер страницы → значок **Transparency (Прозрачность)**, шахматная клетка вверху справа → **60**;
+   - неактивные слова трекера и точки между ними (серые, не оранжевые) → **40**.
+3. **График (слайд 4).** Если он превратился в картинку и не редактируется, это нормально: выглядит он так же. Если нужен живой график: удали его → **Elements (Элементы) → Charts (Диаграммы) → Bar (Столбчатая)** → введи данные из таблицы в конце файла.
+4. **Год на слайде 3.** Проверь, что «2018» совпадает с годом второго снимка на сайте NASA.
+
+## Шаг 3. Сгруппировать то, что должно двигаться вместе
+Зажми **Shift**, кликни по частям, потом **Group (Сгруппировать)** или **Ctrl/Cmd + G**:
+- **Слайд 2:** песочная рамка + фото хлопка.
+- **Слайд 4:** белая плашка + «20%» + текст плашки. Цифру «3» рядом **не** включай.
+- **Слайд 5:** оранжевая плашка + текст «<1% RECYCLED…». Цифру «4» **не** включай.
+- **Слайд 6:** левая карточка (фон + заголовок + фото + список), потом правая карточка так же.
+
+Маленькие цифры-ссылки (¹ ² ³ ⁴ ⁵), подпись внизу, номер страницы и трекер **не группируй и не анимируй**: они должны стоять как рамка.
+
+## Шаг 4. Переходы между слайдами
+1. Внизу открой вид всех страниц (**Grid view / Сетка**) или наведи курсор между двумя страницами в ленте.
+2. Между страницами появится значок **Add transition (Добавить переход)**. Нажми его между **1 и 2** → выбери **Match & move (Совпадение и перемещение)** → поставь медленную длительность (около 1,5–2 с).
+3. Нажми значок между **2 и 3** → **Dissolve (Растворение)**, около 1 с → кнопка **Apply between all pages (Применить ко всем)**.
+4. Вернись к переходу **1→2** и снова выбери **Match & move**: «применить ко всем» его перезаписал.
+5. **Проверка Match & move.** Оранжевый круг должен «переехать» со слайда 1 на слайд 2. Если он просто исчезает и появляется:
+   - скопируй круг со слайда 1 (**Ctrl/Cmd + C**);
+   - на слайде 2 вставь его (**Ctrl/Cmd + V**) и поставь на место старого (за цифрой 2,700, справа сверху);
+   - удали старый круг на слайде 2;
+   - для нового круга: **Transparency → 45**, **Position (Положение) → Backward (Назад)**, чтобы он был за цифрой.
+
+## Шаг 5. Анимация элементов
+Как анимировать один элемент:
+1. Кликни на элемент (или группу).
+2. В верхней панели нажми **Animate (Анимировать)**.
+3. Слева откроется список. Для текста это вкладка с текстовыми анимациями, для фото/группы — анимации элемента. Выбери нужную.
+4. Под анимацией поставь:
+   - **On enter (При появлении)** — только появление, без исчезновения;
+   - **Speed (Скорость)** — ползунок ближе к **медленно**;
+   - у текста, где нужно, **By word (По словам)**.
+
+Как сделать «потом» (порядок):
+- Правый клик по элементу → **Show timing (Показать время)**. Внизу появится шкала: перетащи начало у тех элементов, которые должны появляться позже.
+- Если в твоей версии есть пункт **Animate on click / Click to reveal**, можно ставить появление по клику.
+
+### По слайдам
+
+| Слайд | Что выделить | Анимация | Настройка |
+|---|---|---|---|
+| **1** | Заголовок «The Story / of a T-Shirt» | **Rise (Подъём)** | By word, медленно |
+| | Оранжевый круг | **Fade (Растворение)** | медленно |
+| | Фото футболки | **Pan (Панорама)** | медленно |
+| | Блок «BEKZODJON KIRGIZBAYEV / SUST… / 03.11.2026» | **Fade** | медленно |
+| **2** | «2,700» | **Ascend (Восхождение)** | медленно |
+| | «LITRES OF WATER FOR ONE COTTON T-SHIRT» | **Baseline (Базовая линия)** | |
+| | Группа «рамка + фото» | **Fade** | |
+| **3** | Фото с кораблём | **Breathe (Дыхание)** | медленный зум |
+| | «THE SEA THAT WENT DRY» | **Clarify (Прояснение)** | |
+| | Спутник 2000 (+ его рамка) | **Fade** | потом |
+| | Спутник 2018 (+ рамка) | **Fade** | ещё позже |
+| **4** | Фото фабрики | **Fade** | |
+| | Группа плашки «20%» | **Baseline** | после фото |
+| | График | **Rise** | последним |
+| **5** | Фото свалки | **Breathe** | медленно |
+| | «ONE TRUCK. EVERY SECOND.» | **Typewriter (Печатная машинка)** | |
+| | Группа плашки «<1%…» | **Fade** | после заголовка |
+| **6** | Левая карточка | **Shift (Сдвиг)** | направление: слева |
+| | Правая карточка | **Shift** | направление: справа |
+| | Цитата «Every T-shirt has a story…» | **Ascend** | потом |
+| | «Thank you» | **Fade** | последним |
+| **7** | — | без анимации | |
+
+**Не использовать:** Bounce (Отскок), Tumble (Кувырок), Pop (Хлопок), Stomp и любые «прыгающие» эффекты.
+**Не трогать** (без анимации): подпись внизу, номер страницы, трекер `GROW · MAKE · WEAR · THROW` с подчёркиванием, все маленькие цифры-ссылки.
+
+## Шаг 6. Проверка и ссылка
+1. Нажми **Present (Презентовать)** вверху справа и пролистай все слайды стрелками.
+2. Если какая-то анимация слишком быстрая: выдели элемент → **Animate** → сдвинь скорость.
+3. Ссылка: **Share (Поделиться)** → **Copy link (Копировать ссылку)**. Чтобы преподаватель мог только смотреть, поставь доступ **Can view (Может просматривать)**.
+
+## Данные графика (индекс, 2000 = 100, источник [4])
+
+| Столбец | Значение | Цвет |
 |---|---|---|
 | Clothes made · 2000 | 100 | #F2A65A |
 | Clothes made · 2015 | ≈200 | #E5845F |
 | Times each item is worn · 2000 | 100 | #C4532E |
 | Times each item is worn · 2015 | 64 | #3E0E0C |
-
-## B. Transitions
-- [ ] 1 → 2: **Match & move** (the sun circle is the same element: it moves and resizes, solid → 45% opacity).
-- [ ] All other transitions: **Dissolve**.
-
-## C. Never animate
-- [ ] Corner info, stage tracker (+ underlines), reference numbers. Each is its own text box, so leave them static.
-
-## D. Element animations (calm, slow; no Bounce / Tumble / Pop)
-- [ ] **S1:** headline → Rise (by word) · sun circle → Fade · photo → Pan (slow) · details block → Fade
-- [ ] **S2:** "2,700" → Ascend · label "LITRES OF WATER…" → Baseline · photo + sand frame → Fade
-- [ ] **S3:** left photo → Breathe (slow zoom) · headline → Clarify · then before image → Fade · then after image → Fade
-- [ ] **S4:** left half (photo) → Fade · stat chip ("20%" + text + chip shape) → Baseline · then chart → Rise
-- [ ] **S5:** photo → Breathe · headline → Typewriter · chip → Fade
-- [ ] **S6:** left card → Shift (from left) · right card → Shift (from right) · then quote → Ascend · "Thank you" → Fade
-- [ ] **S7:** no animation
-
-Tip: on S4 and S6, group each card's or chip's pieces (shape + text + photo) before animating, so they move as one.

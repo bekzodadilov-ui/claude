@@ -12,7 +12,7 @@ Every number in the deck comes from these five sources. Numbers in brackets matc
 | 4 | Aral Sea's former size | once one of the world's **4 largest** lakes | [2] | NASA Earth Observatory, *World of Change: Shrinking Aral Sea*: https://science.nasa.gov/earth/earth-observatory/world-of-change/aral-sea/ (old URL: earthobservatory.nasa.gov/world-of-change/AralSea) | ☐ |
 | 5 | Cause | 1960s Soviet diversion of the **Amu Darya & Syr Darya** to irrigate cotton | [2] | same page | ☐ |
 | 6 | Eastern basin | eastern lobe of the South Aral **completely dry in 2014** | [2] | same page | ☐ |
-| 7 | Satellite series | starts **2000**; latest image appears to be **2018** | [2] | same page. ⚠ Check the latest year when you download, and change "2018" on slide 3 if it differs | ☐ |
+| 7 | Satellite series | starts **2000**; latest image **2018** (confirmed) | [2] | same page.  | ☐ |
 | 8 | Textile dyeing | dyeing & treatment ≈ **20%** of industrial water pollution | [3] | World Bank / PaCT, *Cleaner Production Case Study: RFT Improvement… Evince Textiles*: https://documents1.worldbank.org/curated/en/720341627042851108/pdf/Cleaner-Production-Case-Study-Right-First-Time-RFT-Improvement-Through-Process-Optimization-Evince-Textiles-Limited.pdf | ☐ |
 | 9 | Clothing production | approximately **doubled** in 15 years (2000 → 2015) | [4] | Ellen MacArthur Foundation (2017), *A New Textiles Economy*: https://www.ellenmacarthurfoundation.org/a-new-textiles-economy | ☐ |
 | 10 | Wears per garment | utilisation down **36%** vs 15 years earlier | [4] | same report | ☐ |
